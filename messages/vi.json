@@ -1,0 +1,32 @@
+{
+  "Header": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu",
+    "services": "Dịch vụ",
+    "contact": "Liên hệ",
+    "cta": "Đặt lịch ngay"
+  },
+  "NotFoundPage": {
+    "title": "404 - Không Tìm Thấy Trang",
+    "description": "Rất tiếc, trang bạn đang tìm kiếm không tồn tại hoặc đã bị di chuyển.",
+    "button": "Quay lại trang chủ"
+  },
+  "ErrorPage": {
+    "title": "Đã xảy ra sự cố",
+    "description": "Hệ thống gặp sự cố không mong muốn. Vui lòng thử lại hoặc tải lại trang.",
+    "retry": "Thử lại",
+    "button": "Quay lại trang chủ"
+  },
+  "Footer": {
+    "aboutTitle": "Về T99 Barber Shop",
+    "aboutDesc": "T99 Barber Shop tự hào mang đến trải nghiệm cắt tóc, tạo kiểu chuyên nghiệp hàng đầu cho quý ông. Chúng tôi chú trọng từng đường cắt và chất lượng dịch vụ tốt nhất.",
+    "linksTitle": "Liên kết nhanh",
+    "contactTitle": "Liên hệ & Giờ làm việc",
+    "addressLabel": "Địa chỉ:",
+    "addressVal": "123 Đường Nguyễn Trãi, Quận 1, TP. Hồ Chí Minh",
+    "phoneLabel": "Điện thoại:",
+    "hoursLabel": "Giờ mở cửa:",
+    "hoursVal": "9:00 - 21:00 (Hàng ngày)",
+    "rights": "© 2026 T99 Barber Shop. Bảo lưu mọi quyền."
+  }
+}
