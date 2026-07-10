@@ -14,7 +14,6 @@ export default function ErrorPage({
   const t = useTranslations("ErrorPage");
 
   useEffect(() => {
-    // Ghi nhận lỗi ra hệ thống logs
     console.error("Runtime error caught by ErrorBoundary:", error);
   }, [error]);
 

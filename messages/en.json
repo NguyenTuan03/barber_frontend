@@ -28,5 +28,67 @@
     "hoursLabel": "Hours:",
     "hoursVal": "9:00 AM - 9:00 PM (Daily)",
     "rights": "© 2026 T99 Barber Shop. All rights reserved."
+  },
+  "Banner": {
+    "title": "The Ultimate Convenience For Busy People",
+    "subtitle": "Experience the Convenience of In-Home Barber Services",
+    "bookBtn": "BOOK AN APPOINTMENT",
+    "servicesBtn": "BROWSE SERVICES",
+    "addressTitle": "ADDRESS",
+    "addressVal": "123 Nguyen Trai Street, District 1, Ho Chi Minh City",
+    "phoneTitle": "PHONE",
+    "phoneVal1": "+84 (90) 123 4567",
+    "phoneVal2": "+84 (90) 765 4321",
+    "hoursTitle": "HOURS",
+    "hoursVal1": "MON - SAT: 9AM - 8PM",
+    "hoursVal2": "SUN: 9AM - 6PM"
+  },
+  "About": {
+    "title": "YOUR PERSONAL BARBER SERVICE AT YOUR HOME",
+    "description": "T99 brings the professional salon-grade haircutting experience right into the comfort of your own home. No travel, no waiting lines—your personal barber arrives fully equipped to craft your perfect style.",
+    "stat1Num": "99",
+    "stat1Suffix": "%",
+    "stat1Label": "CUSTOMER SATISFACTION",
+    "stat2Num": "10",
+    "stat2Suffix": "+",
+    "stat2Label": "YEARS OF EXPERIENCE"
+  },
+  "Services": {
+    "title": "BROWSE OUR SERVICES",
+    "subtitle": "We offer a full range of professional in-home grooming services, tailored specifically for your style and convenience.",
+    "adultHaircutTitle": "ADULT HAIRCUT",
+    "adultHaircutDesc": "Professional styling cut tailored to your facial structure and personal style.",
+    "kidsHaircutTitle": "KIDS HAIRCUT",
+    "kidsHaircutDesc": "Gentle, friendly haircutting service designed for young boys.",
+    "beardTrimTitle": "BEARD TRIM",
+    "beardTrimDesc": "Neat and sharp trimming using professional clipper tools.",
+    "neckShaveTitle": "NECK SHAVE",
+    "neckShaveDesc": "Clean neck shave using traditional straight razors and hot towel treatment.",
+    "scalpMoisturizingTitle": "SCALP MOISTURIZING",
+    "scalpMoisturizingDesc": "Relaxing head massage with essential oils to moisturize scalp and hair.",
+    "beardGroomingTitle": "BEARD GROOMING",
+    "beardGroomingDesc": "Comprehensive washing, conditioning and styling with premium beard oils.",
+    "bookBtn": "BOOK AN APPOINTMENT"
+  },
+  "Promo": {
+    "title": "EXPERIENCE THE LUXURY OF CONCIERGE BARBER SERVICES AT YOUR HOME",
+    "bookBtn": "BOOK AN APPOINTMENT"
+  },
+  "WhyChoose": {
+    "title": "WHY CHOOSE US",
+    "subtitle": "We pride ourselves on being the trusted destination for thousands of clients, delivering top-tier service and professional craftsmanship from the finest barbers.",
+    "feat1Title": "LICENSED",
+    "feat1Desc": "Our team of licensed and insured barbers follow strict cleanliness and sanitation guidelines for a safe and comfortable experience.",
+    "feat2Title": "MASTERS",
+    "feat2Desc": "Our barbers are passionate about their craft and aim to provide high-quality haircuts for every client.",
+    "feat3Title": "TRUSTED",
+    "feat3Desc": "We have a strong online reputation with a 5-star rating from over 100 thousand satisfied clients.",
+    "googleTitle": "GOOGLE",
+    "googleCount": "196 reviews",
+    "tripadvisorTitle": "TRIPADVISOR",
+    "tripadvisorCount": "196 reviews",
+    "quoteTitle": "THE BEST BARBER SERVICES",
+    "quoteContent": "An incredibly impressive in-home haircutting experience. The barber is highly professional, tools are clean, and the service is extremely thoughtful. I will definitely continue using T99.",
+    "quoteAuthor": "SAM HOUSTON"
   }
 }

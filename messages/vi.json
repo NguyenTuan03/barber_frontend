@@ -28,5 +28,67 @@
     "hoursLabel": "Giờ mở cửa:",
     "hoursVal": "9:00 - 21:00 (Hàng ngày)",
     "rights": "© 2026 T99 Barber Shop. Bảo lưu mọi quyền."
+  },
+  "Banner": {
+    "title": "Sự Tiện Lợi Tối Đa Cho Người Bận Rộn",
+    "subtitle": "Trải nghiệm dịch vụ cắt tóc chuyên nghiệp ngay tại nhà",
+    "bookBtn": "ĐẶT LỊCH NGAY",
+    "servicesBtn": "XEM DỊCH VỤ",
+    "addressTitle": "ĐỊA CHỈ",
+    "addressVal": "123 Đường Nguyễn Trãi, Quận 1, TP. Hồ Chí Minh",
+    "phoneTitle": "ĐIỆN THOẠI",
+    "phoneVal1": "+84 (90) 123 4567",
+    "phoneVal2": "+84 (90) 765 4321",
+    "hoursTitle": "GIỜ MỞ CỬA",
+    "hoursVal1": "T2 - T7: 9:00 - 20:00",
+    "hoursVal2": "CN: 9:00 - 18:00"
+  },
+  "About": {
+    "title": "DỊCH VỤ CẮT TÓC CÁ NHÂN NGAY TẠI NHÀ BẠN",
+    "description": "T99 mang đến trải nghiệm cắt tóc chuyên nghiệp chuẩn salon ngay trong không gian ấm cúng tại nhà bạn. Không cần di chuyển, không lo chờ đợi, thợ tóc riêng của bạn sẽ chuẩn bị mọi dụng cụ cần thiết để tạo nên kiểu tóc hoàn hảo nhất.",
+    "stat1Num": "99",
+    "stat1Suffix": "%",
+    "stat1Label": "KHÁCH HÀNG HÀI LÒNG",
+    "stat2Num": "10",
+    "stat2Suffix": "+",
+    "stat2Label": "NĂM KINH NGHIỆM"
+  },
+  "Services": {
+    "title": "DANH SÁCH DỊCH VỤ CỦA CHÚNG TÔI",
+    "subtitle": "Chúng tôi cung cấp đầy đủ các dịch vụ chăm sóc tóc và râu chuyên nghiệp tại nhà, được thực hiện bởi những thợ lành nghề nhất.",
+    "adultHaircutTitle": "CẮT TÓC NGƯỜI LỚN",
+    "adultHaircutDesc": "Cắt tạo kiểu chuyên nghiệp phù hợp với khuôn mặt và phong cách cá nhân.",
+    "kidsHaircutTitle": "CẮT TÓC TRẺ EM",
+    "kidsHaircutDesc": "Dịch vụ cắt tóc nhẹ nhàng, thân thiện cho các bé trai.",
+    "beardTrimTitle": "TỈA RÂU",
+    "beardTrimDesc": "Tỉa râu gọn gàng, sắc nét bằng tông đơ chuyên dụng.",
+    "neckShaveTitle": "CẠO MẶT CỔ",
+    "neckShaveDesc": "Cạo râu và vệ sinh phần cổ bằng dao cạo truyền thống và khăn nóng.",
+    "scalpMoisturizingTitle": "DƯỠNG ẨM DA ĐẦU",
+    "scalpMoisturizingDesc": "Massage da đầu kết hợp dầu dưỡng phục hồi tóc và cấp ẩm da đầu.",
+    "beardGroomingTitle": "CHĂM SÓC RÂU TOÀN DIỆN",
+    "beardGroomingDesc": "Gội, dưỡng ẩm và tạo kiểu râu chuyên sâu bằng tinh dầu cao cấp.",
+    "bookBtn": "ĐẶT LỊCH HẸN NGAY"
+  },
+  "Promo": {
+    "title": "TRẢI NGHIỆM SỰ SANG TRỌNG CỦA DỊCH VỤ CẮT TÓC RIÊNG NGAY TẠI NHÀ BẠN",
+    "bookBtn": "ĐẶT LỊCH HẸN NGAY"
+  },
+  "WhyChoose": {
+    "title": "TẠI SAO CHỌN CHÚNG TÔI",
+    "subtitle": "Chúng tôi tự hào là điểm đến tin cậy của hàng ngàn khách hàng nhờ chất lượng phục vụ đỉnh cao và sự chuyên nghiệp từ những thợ cắt tóc lành nghề nhất.",
+    "feat1Title": "ĐƯỢC CẤP PHÉP",
+    "feat1Desc": "Đội ngũ thợ có chứng chỉ hành nghề chuyên nghiệp, tuân thủ nghiêm ngặt các quy định về vệ sinh dịch tễ để bảo đảm sự an toàn cao nhất.",
+    "feat2Title": "BẬC THẦY TẠO KIỂU",
+    "feat2Desc": "Thợ cắt tóc của chúng tôi đam mê nghệ thuật tạo kiểu, luôn học hỏi để mang tới những đường cắt tỉ mỉ nhất cho mỗi khách hàng.",
+    "feat3Title": "ĐÁNG TIN CẬY",
+    "feat3Desc": "Nhận được sự tin tưởng tuyệt đối với đánh giá 5 sao từ hàng ngàn khách hàng đã trải nghiệm dịch vụ cắt tóc tại nhà.",
+    "googleTitle": "GOOGLE",
+    "googleCount": "196 đánh giá",
+    "tripadvisorTitle": "TRIPADVISOR",
+    "tripadvisorCount": "196 đánh giá",
+    "quoteTitle": "DỊCH VỤ CẮT TÓC TỐT NHẤT",
+    "quoteContent": "Trải nghiệm cắt tóc tại nhà vô cùng ấn tượng. Thợ cắt chuyên nghiệp, dụng cụ sạch sẽ và dịch vụ rất chu đáo. Chắc chắn tôi sẽ tiếp tục sử dụng dịch vụ của T99.",
+    "quoteAuthor": "SAM HOUSTON"
   }
 }
