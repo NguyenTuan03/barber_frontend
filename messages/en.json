@@ -90,5 +90,19 @@
     "quoteTitle": "THE BEST BARBER SERVICES",
     "quoteContent": "An incredibly impressive in-home haircutting experience. The barber is highly professional, tools are clean, and the service is extremely thoughtful. I will definitely continue using T99.",
     "quoteAuthor": "SAM HOUSTON"
+  },
+  "Contact": {
+    "title": "MAKE AN APPOINTMENT",
+    "description": "Leave your contact info and details, and we will get back to you immediately to confirm your appointment.",
+    "phoneLabel": "GIVE US A CALL",
+    "phoneVal": "(475) 453 - 3465",
+    "emailLabel": "SEND US AN EMAIL",
+    "emailVal": "hello@example.com",
+    "formName": "FULL NAME",
+    "formSubject": "SUBJECT",
+    "formPhone": "PHONE NUMBER",
+    "formEmail": "EMAIL ADDRESS",
+    "formMessage": "PLEASE TYPE YOUR MESSAGE HERE...",
+    "formBtn": "BOOK AN APPOINTMENT"
   }
 }

@@ -71,7 +71,7 @@
     "bookBtn": "ĐẶT LỊCH HẸN NGAY"
   },
   "Promo": {
-    "title": "TRẢI NGHIỆM SỰ SANG TRỌNG CỦA DỊCH VỤ CẮT TÓC RIÊNG NGAY TẠI NHÀ BẠN",
+    "title": "TRẠI NGHIỆM SỰ SANG TRỌNG CỦA DỊCH VỤ CẮT TÓC RIÊNG NGAY TẠI NHÀ BẠN",
     "bookBtn": "ĐẶT LỊCH HẸN NGAY"
   },
   "WhyChoose": {
@@ -90,5 +90,19 @@
     "quoteTitle": "DỊCH VỤ CẮT TÓC TỐT NHẤT",
     "quoteContent": "Trải nghiệm cắt tóc tại nhà vô cùng ấn tượng. Thợ cắt chuyên nghiệp, dụng cụ sạch sẽ và dịch vụ rất chu đáo. Chắc chắn tôi sẽ tiếp tục sử dụng dịch vụ của T99.",
     "quoteAuthor": "SAM HOUSTON"
+  },
+  "Contact": {
+    "title": "ĐẶT LỊCH HẸN",
+    "description": "Để lại thông tin liên hệ và yêu cầu của bạn, chúng tôi sẽ liên hệ lại ngay lập tức để xác nhận lịch hẹn của bạn.",
+    "phoneLabel": "GỌI CHO CHÚNG TÔI",
+    "phoneVal": "(475) 453 - 3465",
+    "emailLabel": "GỬI EMAIL VỀ",
+    "emailVal": "hello@example.com",
+    "formName": "HỌ VÀ TÊN",
+    "formSubject": "TIÊU ĐỀ HẸN",
+    "formPhone": "SỐ ĐIỆN THOẠI",
+    "formEmail": "ĐỊA CHỈ EMAIL",
+    "formMessage": "VUI LÒNG NHẬP NỘI DUNG TẠI ĐÂY...",
+    "formBtn": "ĐẶT LỊCH HẸN NGAY"
   }
 }

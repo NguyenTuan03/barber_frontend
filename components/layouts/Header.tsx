@@ -1,13 +1,20 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useSyncExternalStore } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/routing";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 export default function HeaderLayout() {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const mounted = useSyncExternalStore(
+        () => () => {},
+        () => true,
+        () => false
+    );
+    const { theme, setTheme } = useTheme();
     const pathname = usePathname();
     const router = useRouter();
     const locale = useLocale();
@@ -32,6 +39,10 @@ export default function HeaderLayout() {
             document.body.style.overflow = "unset";
         };
     }, [isOpen]);
+
+    const toggleTheme = () => {
+        setTheme(theme === "dark" ? "light" : "dark");
+    };
 
     const headerItem = [
         { name: "home" as const, path: "/" },
@@ -114,6 +125,41 @@ export default function HeaderLayout() {
                         <span className="uppercase">{locale}</span>
                     </button>
 
+                    {/* Theme Switcher Button */}
+                    <button
+                        onClick={toggleTheme}
+                        className="flex items-center justify-center w-8 h-8 rounded-full border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600 text-zinc-700 dark:text-zinc-300 transition-all duration-300 cursor-pointer bg-transparent"
+                        aria-label="Toggle theme"
+                    >
+                        {!mounted ? (
+                            <div className="w-4 h-4 rounded-full bg-zinc-200/50 dark:bg-zinc-800/50 animate-pulse" />
+                        ) : theme === "dark" ? (
+                            // Sun icon (Switch to light)
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={1.5}
+                                stroke="currentColor"
+                                className="w-4 h-4 text-amber-500"
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m0 13.5V21M4.22 4.22l1.59 1.59m12.38 12.38l1.59 1.59M3 12h2.25m13.5 0H21M4.22 19.78l1.59-1.59m12.38-12.38l1.59-1.59M12 7.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Z" />
+                            </svg>
+                        ) : (
+                            // Moon icon (Switch to dark)
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={1.5}
+                                stroke="currentColor"
+                                className="w-4 h-4 text-zinc-700"
+                            >
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+                            </svg>
+                        )}
+                    </button>
+
                     {/* CTA - Button-in-Button Pattern */}
                     <Link
                         href="/booking"
@@ -165,7 +211,7 @@ export default function HeaderLayout() {
                     : "opacity-0 pointer-events-none -translate-y-4"
                     }`}
             >
-                {/* Navigation Items (Staggered Mask Reveal effect via CSS transition delay) */}
+                {/* Navigation Items */}
                 <nav className="flex flex-col gap-6 text-2xl font-bold tracking-tight text-white mt-4">
                     {headerItem.map((item, index) => (
                         <Link
@@ -202,7 +248,7 @@ export default function HeaderLayout() {
                     {/* Mobile Language Toggler */}
                     <button
                         onClick={toggleLanguage}
-                        className="flex items-center justify-between w-full py-3.5 px-5 rounded-xl border border-white/10 text-white text-xs font-semibold tracking-wider bg-white/5 active:bg-white/10 transition-colors"
+                        className="flex items-center justify-between w-full py-3.5 px-5 rounded-xl border border-white/10 text-white text-xs font-semibold tracking-wider bg-white/5 active:bg-white/10 transition-colors cursor-pointer"
                     >
                         <span className="text-zinc-400">Ngôn ngữ / Language</span>
                         <span className="text-amber-400 flex items-center gap-1.5">
@@ -217,6 +263,47 @@ export default function HeaderLayout() {
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0 0a8.997 8.997 0 0 1-7.843-4.582M12 21a8.997 8.997 0 0 0 7.843-4.582m-15.686 0A11.953 11.953 0 0 1 12 10.5c2.998 0 5.74-1.1 7.843-2.918m-15.686 0A8.959 8.959 0 0 1 3 12c0-.778.099-1.533.284-2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-.778.099-1.533.284-2.253m0 0A17.919 17.919 0 0 0 12 12.5c2.998 0 5.74-1.1 7.843-2.918" />
                             </svg>
                             {locale === "vi" ? "Tiếng Việt (VI)" : "English (EN)"}
+                        </span>
+                    </button>
+
+                    {/* Mobile Theme Switcher */}
+                    <button
+                        onClick={toggleTheme}
+                        className="flex items-center justify-between w-full py-3.5 px-5 rounded-xl border border-white/10 text-white text-xs font-semibold tracking-wider bg-white/5 active:bg-white/10 transition-colors cursor-pointer"
+                    >
+                        <span className="text-zinc-400">Giao diện / Theme</span>
+                        <span className="text-amber-400 flex items-center gap-1.5">
+                            {!mounted ? (
+                                <div className="w-16 h-4 rounded bg-zinc-200/50 dark:bg-zinc-800/50 animate-pulse" />
+                            ) : theme === "dark" ? (
+                                <>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        strokeWidth={1.5}
+                                        stroke="currentColor"
+                                        className="w-4 h-4"
+                                    >
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m0 13.5V21M4.22 4.22l1.59 1.59m12.38 12.38l1.59 1.59M3 12h2.25m13.5 0H21M4.22 19.78l1.59-1.59m12.38-12.38l1.59-1.59M12 7.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Z" />
+                                    </svg>
+                                    Tối (Dark)
+                                </>
+                            ) : (
+                                <>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        strokeWidth={1.5}
+                                        stroke="currentColor"
+                                        className="w-4 h-4"
+                                    >
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+                                    </svg>
+                                    Sáng (Light)
+                                </>
+                            )}
                         </span>
                     </button>
 

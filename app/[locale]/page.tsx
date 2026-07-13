@@ -8,6 +8,7 @@ export default function Home() {
   const tServices = useTranslations("Services");
   const tPromo = useTranslations("Promo");
   const tWhyChoose = useTranslations("WhyChoose");
+  const tContact = useTranslations("Contact");
 
   const servicesList = [
     {
@@ -243,7 +244,7 @@ export default function Home() {
       {/* Floating Shop Info Block */}
       <section className="relative z-20 w-full max-w-5xl mx-auto -mt-16 md:-mt-20 px-4 mb-16">
         <div className="bg-white dark:bg-zinc-900 border border-zinc-200/50 dark:border-zinc-800/80 rounded-xl shadow-[0_24px_50px_rgba(0,0,0,0.06)] grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-zinc-100 dark:divide-zinc-800 p-6 md:p-8">
-
+          
           {/* Col 1: Address */}
           <div className="flex flex-col items-center text-center p-4 md:p-6 gap-3">
             {/* Minimal SVG Pin Icon */}
@@ -342,13 +343,13 @@ export default function Home() {
       {/* About Service Section (Asymmetric Editorial Split layout) */}
       <section className="w-full bg-[#FDFBF7] dark:bg-zinc-950/40 py-20 md:py-28 px-6 md:px-8 border-t border-zinc-100 dark:border-zinc-900">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-center">
-
+          
           {/* Left Column: Text & Stats */}
           <div className="md:col-span-7 flex flex-col items-start gap-5">
             <h2 className="text-zinc-950 dark:text-white font-extrabold text-3xl md:text-4xl tracking-tight leading-tight uppercase font-sans max-w-[16ch]">
               {tAbout("title")}
             </h2>
-
+            
             <p className="text-zinc-600 dark:text-zinc-400 text-xs md:text-sm font-medium leading-relaxed max-w-[50ch] mb-4">
               {tAbout("description")}
             </p>
@@ -406,7 +407,7 @@ export default function Home() {
       {/* Browse Services Section (Editorial Grid inside white card) */}
       <section className="w-full bg-[#FDFBF7] dark:bg-zinc-950/40 py-20 md:py-28 px-6 md:px-8 border-t border-zinc-100 dark:border-zinc-900">
         <div className="max-w-5xl mx-auto flex flex-col items-center">
-
+          
           {/* Centered Heading */}
           <h2 className="text-zinc-950 dark:text-white font-extrabold text-3xl md:text-4xl tracking-tight leading-tight uppercase font-sans mb-4 text-center">
             {tServices("title")}
@@ -487,7 +488,7 @@ export default function Home() {
       {/* Why Choose Us & Reviews Section */}
       <section className="w-full bg-[#FDFBF7] dark:bg-zinc-950/40 py-20 md:py-28 px-6 md:px-8 border-t border-zinc-100 dark:border-zinc-900">
         <div className="max-w-5xl mx-auto flex flex-col items-center">
-
+          
           {/* Title */}
           <h2 className="text-zinc-950 dark:text-white font-extrabold text-3xl md:text-4xl tracking-tight leading-tight uppercase font-sans mb-4 text-center">
             {tWhyChoose("title")}
@@ -518,7 +519,7 @@ export default function Home() {
 
           {/* Reviews Row (Google, Central Testimonial Card, TripAdvisor) */}
           <div className="w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
-
+            
             {/* Left: Google Rating */}
             <div className="md:col-span-3 flex flex-col items-center text-center gap-2">
               <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
@@ -607,6 +608,186 @@ export default function Home() {
           </div>
 
         </div>
+      </section>
+
+      {/* Appointment Contact Form Section */}
+      <section className="relative w-full py-20 md:py-28 px-6 md:px-8 bg-zinc-950 overflow-visible flex flex-col items-center justify-center">
+        {/* Background Image with Overlay */}
+        <div className="absolute inset-0 w-full h-full z-0">
+          <Image
+            src="/images/contact-bg.png"
+            alt="Make an appointment background"
+            fill
+            className="object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-zinc-950 z-10" />
+        </div>
+
+        {/* Content Container */}
+        <div className="relative z-20 w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-start">
+          
+          {/* Left Column: Contact details */}
+          <div className="md:col-span-5 flex flex-col items-start gap-6 text-left">
+            <h2 className="text-white font-extrabold text-3xl md:text-4xl tracking-tight leading-tight uppercase font-sans">
+              {tContact("title")}
+            </h2>
+            <p className="text-zinc-400 text-xs md:text-sm font-medium leading-relaxed max-w-[38ch] mb-4">
+              {tContact("description")}
+            </p>
+
+            {/* Phone item */}
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-zinc-950 shadow-sm flex-shrink-0">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M2.25 6.622c0-1.272.78-2.319 1.938-2.67 1.15-.35 2.4-.1 3.248.672l1.637 1.513c.636.587.828 1.503.483 2.274l-.79 1.777c-.33.742-.15 1.62.454 2.186l3.41 3.142a2.182 2.182 0 0 0 2.122.421l1.792-.706c.76-.3 1.666-.085 2.22.524l1.652 1.815c.677.744.75 1.84.174 2.58a12.35 12.35 0 0 1-5.467 4.093c-1.127.394-2.365.19-3.21-.607l-9.03-8.312A9.09 9.09 0 0 1 2.25 6.622Z"
+                  />
+                </svg>
+              </div>
+              <div className="flex flex-col text-left">
+                <span className="text-[10px] font-extrabold tracking-[0.18em] text-zinc-400 uppercase">
+                  {tContact("phoneLabel")}
+                </span>
+                <a href={`tel:${tContact("phoneVal")}`} className="text-sm font-bold text-white hover:text-amber-400 transition-colors mt-0.5">
+                  {tContact("phoneVal")}
+                </a>
+              </div>
+            </div>
+
+            {/* Email item */}
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center text-zinc-950 shadow-sm flex-shrink-0">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+                  />
+                </svg>
+              </div>
+              <div className="flex flex-col text-left">
+                <span className="text-[10px] font-extrabold tracking-[0.18em] text-zinc-400 uppercase">
+                  {tContact("emailLabel")}
+                </span>
+                <a href={`mailto:${tContact("emailVal")}`} className="text-sm font-bold text-white hover:text-amber-400 transition-colors mt-0.5">
+                  {tContact("emailVal")}
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Right Column: Appointment Form */}
+          <div className="md:col-span-7 w-full z-30">
+            <form className="bg-white dark:bg-zinc-900 border border-zinc-200/50 dark:border-zinc-800/80 rounded-2xl shadow-[0_30px_70px_rgba(0,0,0,0.12)] p-8 md:p-10 flex flex-col gap-6 md:gap-8 text-left">
+              
+              {/* Name */}
+              <div className="flex flex-col items-start gap-1">
+                <label className="text-[10px] font-extrabold tracking-[0.15em] text-zinc-950 dark:text-white uppercase">
+                  {tContact("formName")}
+                </label>
+                <input
+                  type="text"
+                  required
+                  className="w-full bg-transparent border-b border-zinc-300 dark:border-zinc-700 py-2 focus:border-zinc-900 dark:focus:border-white focus:outline-none text-sm text-zinc-800 dark:text-zinc-200 font-semibold transition-colors"
+                />
+              </div>
+
+              {/* Subject */}
+              <div className="flex flex-col items-start gap-1">
+                <label className="text-[10px] font-extrabold tracking-[0.15em] text-zinc-950 dark:text-white uppercase">
+                  {tContact("formSubject")}
+                </label>
+                <input
+                  type="text"
+                  required
+                  className="w-full bg-transparent border-b border-zinc-300 dark:border-zinc-700 py-2 focus:border-zinc-900 dark:focus:border-white focus:outline-none text-sm text-zinc-800 dark:text-zinc-200 font-semibold transition-colors"
+                />
+              </div>
+
+              {/* Phone & Email side-by-side */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
+                {/* Phone */}
+                <div className="flex flex-col items-start gap-1">
+                  <label className="text-[10px] font-extrabold tracking-[0.15em] text-zinc-950 dark:text-white uppercase">
+                    {tContact("formPhone")}
+                  </label>
+                  <input
+                    type="tel"
+                    required
+                    className="w-full bg-transparent border-b border-zinc-300 dark:border-zinc-700 py-2 focus:border-zinc-900 dark:focus:border-white focus:outline-none text-sm text-zinc-800 dark:text-zinc-200 font-semibold transition-colors"
+                  />
+                </div>
+                {/* Email */}
+                <div className="flex flex-col items-start gap-1">
+                  <label className="text-[10px] font-extrabold tracking-[0.15em] text-zinc-950 dark:text-white uppercase">
+                    {tContact("formEmail")}
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    className="w-full bg-transparent border-b border-zinc-300 dark:border-zinc-700 py-2 focus:border-zinc-900 dark:focus:border-white focus:outline-none text-sm text-zinc-800 dark:text-zinc-200 font-semibold transition-colors"
+                  />
+                </div>
+              </div>
+
+              {/* Message */}
+              <div className="flex flex-col items-start gap-1">
+                <label className="text-[10px] font-extrabold tracking-[0.15em] text-zinc-950 dark:text-white uppercase">
+                  {tContact("formMessage")}
+                </label>
+                <textarea
+                  required
+                  className="w-full bg-transparent border-b border-zinc-300 dark:border-zinc-700 py-2 focus:border-zinc-900 dark:focus:border-white focus:outline-none text-sm text-zinc-800 dark:text-zinc-200 font-semibold transition-colors resize-none h-20"
+                />
+              </div>
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                className="px-8 py-4 bg-[#d4c3a3] hover:bg-[#c8b695] active:scale-[0.98] text-zinc-950 text-[11px] font-extrabold tracking-wider rounded transition-all duration-300 uppercase w-fit mt-2 shadow-md"
+              >
+                {tContact("formBtn")}
+              </button>
+
+            </form>
+          </div>
+
+        </div>
+      </section>
+
+      {/* Interactive Google Map Section */}
+      <section className="relative w-full h-[350px] md:h-[450px] z-10 -mt-20 md:-mt-24 overflow-hidden border-b border-zinc-100 dark:border-zinc-900">
+        <iframe
+          src="https://maps.google.com/maps?q=123%20Nguyen%20Trai%20Street%20District%201%20Ho%20Chi%20Minh%20City&t=&z=16&ie=UTF8&iwloc=&output=embed"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="T99 Barber Shop Location"
+          className="w-full h-full grayscale dark:invert dark:opacity-80 transition-all duration-300"
+        />
+        {/* Soft dark/light vignette around the map corners to match design */}
+        <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#FDFBF7]/30 dark:from-zinc-950/20 to-transparent z-20 pointer-events-none" />
+        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#FDFBF7]/30 dark:from-zinc-950/20 to-transparent z-20 pointer-events-none" />
       </section>
     </>
   );
