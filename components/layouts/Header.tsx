@@ -183,21 +183,20 @@ export default function HeaderLayout() {
                     {/* Hamburger Menu Trigger (Mobile) */}
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className="flex md:hidden flex-col items-center justify-center w-8 h-8 rounded-full border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 transition-colors z-50 cursor-pointer"
+                        className={`flex md:hidden flex-col items-center justify-center w-8 h-8 rounded-full border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900 transition-all duration-300 z-50 cursor-pointer ${
+                            isOpen ? "opacity-0 pointer-events-none" : "opacity-100"
+                        }`}
                         aria-label="Toggle menu"
                     >
                         <div className="relative w-4 h-3.5 flex flex-col justify-between">
                             <span
-                                className={`w-4 h-0.5 bg-zinc-950 dark:bg-white rounded-full transition-all duration-300 origin-center ${isOpen ? "absolute top-1.5 rotate-45" : ""
-                                    }`}
+                                className="w-4 h-0.5 bg-zinc-950 dark:bg-white rounded-full transition-all duration-300"
                             />
                             <span
-                                className={`w-4 h-0.5 bg-zinc-950 dark:bg-white rounded-full transition-all duration-300 ${isOpen ? "scale-x-0 opacity-0" : ""
-                                    }`}
+                                className="w-4 h-0.5 bg-zinc-950 dark:bg-white rounded-full transition-all duration-300"
                             />
                             <span
-                                className={`w-4 h-0.5 bg-zinc-950 dark:bg-white rounded-full transition-all duration-300 origin-center ${isOpen ? "absolute top-1.5 -rotate-45" : ""
-                                    }`}
+                                className="w-4 h-0.5 bg-zinc-950 dark:bg-white rounded-full transition-all duration-300"
                             />
                         </div>
                     </button>
@@ -211,12 +210,31 @@ export default function HeaderLayout() {
                     : "opacity-0 pointer-events-none -translate-y-4"
                     }`}
             >
+                {/* Close Button inside Drawer */}
+                <button
+                    onClick={() => setIsOpen(false)}
+                    className="absolute top-6 right-6 flex items-center justify-center w-9 h-9 rounded-full border border-white/10 bg-white/5 text-white active:bg-white/10 hover:bg-white/10 transition-colors z-50 cursor-pointer"
+                    aria-label="Close menu"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={1.5}
+                        stroke="currentColor"
+                        className="w-5 h-5"
+                    >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+
                 {/* Navigation Items */}
                 <nav className="flex flex-col gap-6 text-2xl font-bold tracking-tight text-white mt-4">
                     {headerItem.map((item, index) => (
                         <Link
                             key={item.name}
                             href={item.path}
+                            onClick={() => setIsOpen(false)}
                             className={`transition-all duration-500 py-2 border-b border-white/5 flex items-center justify-between group ${isOpen ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
                                 }`}
                             style={{
@@ -250,7 +268,7 @@ export default function HeaderLayout() {
                         onClick={toggleLanguage}
                         className="flex items-center justify-between w-full py-3.5 px-5 rounded-xl border border-white/10 text-white text-xs font-semibold tracking-wider bg-white/5 active:bg-white/10 transition-colors cursor-pointer"
                     >
-                        <span className="text-zinc-400">Ngôn ngữ / Language</span>
+                        <span className="text-zinc-400">{t("language")}</span>
                         <span className="text-amber-400 flex items-center gap-1.5">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -271,7 +289,7 @@ export default function HeaderLayout() {
                         onClick={toggleTheme}
                         className="flex items-center justify-between w-full py-3.5 px-5 rounded-xl border border-white/10 text-white text-xs font-semibold tracking-wider bg-white/5 active:bg-white/10 transition-colors cursor-pointer"
                     >
-                        <span className="text-zinc-400">Giao diện / Theme</span>
+                        <span className="text-zinc-400">{t("theme")}</span>
                         <span className="text-amber-400 flex items-center gap-1.5">
                             {!mounted ? (
                                 <div className="w-16 h-4 rounded bg-zinc-200/50 dark:bg-zinc-800/50 animate-pulse" />
@@ -287,7 +305,7 @@ export default function HeaderLayout() {
                                     >
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v2.25m0 13.5V21M4.22 4.22l1.59 1.59m12.38 12.38l1.59 1.59M3 12h2.25m13.5 0H21M4.22 19.78l1.59-1.59m12.38-12.38l1.59-1.59M12 7.5a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Z" />
                                     </svg>
-                                    Tối (Dark)
+                                    {t("themeDark")}
                                 </>
                             ) : (
                                 <>
@@ -301,7 +319,7 @@ export default function HeaderLayout() {
                                     >
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
                                     </svg>
-                                    Sáng (Light)
+                                    {t("themeLight")}
                                 </>
                             )}
                         </span>

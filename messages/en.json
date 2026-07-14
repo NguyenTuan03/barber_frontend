@@ -4,7 +4,11 @@
     "about": "About Us",
     "services": "Services",
     "contact": "Contact",
-    "cta": "Book Now"
+    "cta": "Book Now",
+    "language": "Language",
+    "theme": "Theme",
+    "themeLight": "Light",
+    "themeDark": "Dark"
   },
   "NotFoundPage": {
     "title": "404 - Page Not Found",
