@@ -1,16 +1,26 @@
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/routing";
 import Image from "next/image";
+import { apiFetch } from "@/utils/api-client";
 
-export default function Home() {
-  const tBanner = useTranslations("Banner");
-  const tAbout = useTranslations("About");
-  const tServices = useTranslations("Services");
-  const tPromo = useTranslations("Promo");
-  const tWhyChoose = useTranslations("WhyChoose");
-  const tContact = useTranslations("Contact");
+interface APIServiceItem {
+  id: number | string;
+  name: string;
+  description?: string;
+  price: string;
+  image_url?: string;
+}
 
-  const servicesList = [
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const tBanner = await getTranslations("Banner");
+  const tAbout = await getTranslations("About");
+  const tServices = await getTranslations("Services");
+  const tPromo = await getTranslations("Promo");
+  const tWhyChoose = await getTranslations("WhyChoose");
+  const tContact = await getTranslations("Contact");
+
+  const defaultServicesList = [
     {
       id: "adultHaircut",
       price: "$39 USD",
@@ -190,6 +200,41 @@ export default function Home() {
       ),
     },
   ];
+
+  // Fetch services data dynamically from Backend or fallback to static data
+  let servicesList: Array<{
+    id: string;
+    name: string;
+    description: string;
+    price: string;
+    icon: React.ReactNode;
+  }> = [];
+
+  try {
+    const data = await apiFetch<APIServiceItem[]>("/api/v1/services", {
+      locale,
+      next: { revalidate: 60 },
+    });
+
+    servicesList = data.map((item: APIServiceItem, index: number) => {
+      const defaultService = defaultServicesList[index % defaultServicesList.length];
+      return {
+        id: item.id.toString(),
+        name: item.name || "",
+        description: item.description || "",
+        price: item.price || defaultService.price,
+        icon: defaultService.icon,
+      };
+    });
+  } catch {
+    servicesList = defaultServicesList.map((service) => ({
+      id: service.id,
+      name: tServices(`${service.id}Title`),
+      description: tServices(`${service.id}Desc`),
+      price: service.price,
+      icon: service.icon,
+    }));
+  }
 
   return (
     <>
@@ -428,10 +473,10 @@ export default function Home() {
                   {/* Right Side: Service Info */}
                   <div className="flex-1 flex flex-col gap-1">
                     <h3 className="text-sm font-extrabold tracking-wider text-zinc-950 dark:text-white uppercase">
-                      {tServices(`${service.id}Title`)}
+                      {service.name}
                     </h3>
                     <p className="text-xs text-zinc-500 dark:text-zinc-400 font-semibold leading-relaxed max-w-[36ch]">
-                      {tServices(`${service.id}Desc`)}
+                      {service.description}
                     </p>
                     <span className="text-xs font-black text-zinc-900 dark:text-amber-500 mt-1">
                       {service.price}
