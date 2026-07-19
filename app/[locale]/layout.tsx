@@ -8,7 +8,7 @@ import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 
-import { ThemeProvider } from "@/components/providers/theme-provider";
+import { ThemeProvider } from "@wrksz/themes/next";
 import QueryProvider from "@/components/providers/query-provider";
 
 const geistSans = Geist({

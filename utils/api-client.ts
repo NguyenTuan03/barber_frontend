@@ -1,5 +1,5 @@
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000";
-
+const VERSION = process.env.NEXT_PUBLIC_API_VERSION || "api/v1";
 interface FetchOptions extends RequestInit {
   params?: Record<string, string>;
   locale?: string;
@@ -9,7 +9,7 @@ export async function apiFetch<T>(endpoint: string, options: FetchOptions = {}):
   const { params, locale, headers, ...customOptions } = options;
 
   // 1. Tạo query string nếu có
-  let url = `${BASE_URL}${endpoint}`;
+  let url = `${BASE_URL}/${VERSION}/${endpoint}`;
   if (params) {
     const searchParams = new URLSearchParams(params);
     url += `?${searchParams.toString()}`;

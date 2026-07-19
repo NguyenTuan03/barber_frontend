@@ -4,7 +4,7 @@ import { useState, useEffect, useSyncExternalStore } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/routing";
 import Image from "next/image";
-import { useTheme } from "next-themes";
+import { useTheme } from "@wrksz/themes/client";
 
 export default function HeaderLayout() {
     const [isOpen, setIsOpen] = useState(false);
