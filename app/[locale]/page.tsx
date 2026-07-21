@@ -167,6 +167,13 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   // Reviews
   const homeReviewfeats = await getSiteSettingApi(locale, SiteSettingKeyEnum.HOME_REVIEW_FEATS);
 
+  // Appointment Info
+  const homeContactInfo = await getSiteSettingApi(locale, SiteSettingKeyEnum.HOME_APPOINTMENT_INFO);
+
+  // Google map
+  const homeGoogleMap = await getSiteSettingApi(locale, SiteSettingKeyEnum.HOME_GOOGLE_MAP);
+  
+
   return (
     <>
       {/* Hero Banner Section */}
@@ -203,10 +210,10 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <ReviewsSection tWhyChoose={tWhyChoose} featsSetting={homeReviewfeats} />
 
       {/* Appointment Contact Form Section */}
-      <Contact tContact={tContact} />
+      <Contact tContact={tContact} setting={homeContactInfo} />
 
       {/* Interactive Google Map Section */}
-      <GoogleMap />
+      <GoogleMap setting={homeGoogleMap} />
     </>
   );
 }

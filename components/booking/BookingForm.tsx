@@ -415,10 +415,10 @@ export default function BookingForm({ locale }: { locale: string }) {
     return (
         <div className="max-w-5xl mx-auto px-4 md:px-8 py-10 md:py-16">
             <form onSubmit={handleSubmitBooking} className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-                
+
                 {/* Left Column: Form Elements */}
                 <div className="md:col-span-7 bg-white dark:bg-zinc-900 border border-zinc-200/50 dark:border-zinc-800/80 rounded-2xl shadow-sm p-6 md:p-8 flex flex-col gap-6 text-zinc-950 dark:text-white">
-                    
+
                     {/* Header Intro */}
                     <div className="flex flex-col gap-1 border-b border-zinc-100 dark:border-zinc-800 pb-3">
                         <h2 className="text-base font-bold uppercase tracking-wider">{t("customerInfoTitle")}</h2>
@@ -527,7 +527,7 @@ export default function BookingForm({ locale }: { locale: string }) {
 
                                 return (
                                     <div key={index} className="flex flex-col md:flex-row items-center gap-3 w-full bg-zinc-50 dark:bg-zinc-950/20 border border-zinc-200/50 dark:border-zinc-800/60 rounded-xl p-4 relative">
-                                        
+
                                         {/* Label 'Khách 1' */}
                                         <div className="absolute top-2.5 left-4 md:static text-[9px] md:text-[10px] font-black uppercase text-zinc-400 tracking-wider">
                                             {t("guestIndexLabel", { index: index + 1 })}
@@ -605,7 +605,7 @@ export default function BookingForm({ locale }: { locale: string }) {
 
                             <div className="flex items-center gap-4 text-xs font-black text-zinc-900 dark:text-amber-500">
                                 <span>{selectedServices.filter(s => s.serviceId !== "").length} | {currentServicesSummary.totalDuration} phút</span>
-                                
+
                                 {/* Toggle notes */}
                                 <div className="flex items-center gap-2 text-zinc-500 dark:text-zinc-400 font-semibold cursor-pointer select-none">
                                     <span className="text-[10px] uppercase font-extrabold">{t("showNotesLabel")}</span>
@@ -639,7 +639,7 @@ export default function BookingForm({ locale }: { locale: string }) {
                         <label className="text-[10px] font-extrabold tracking-wider uppercase text-zinc-700 dark:text-zinc-300">
                             {t("timeSlotLabel")}
                         </label>
-                        
+
                         <div className="grid grid-cols-3 sm:grid-cols-4 gap-2 w-full">
                             {timeSlots.map(time => (
                                 <button
@@ -753,7 +753,7 @@ export default function BookingForm({ locale }: { locale: string }) {
             {showModal && confirmedDetails && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-zinc-950/65 backdrop-blur-sm animate-fade-in">
                     <div className="bg-white dark:bg-zinc-900 border border-zinc-200/50 dark:border-zinc-800/80 rounded-2xl p-6 md:p-8 max-w-sm w-full shadow-2xl flex flex-col items-center text-center gap-5">
-                        
+
                         {/* Success Icon */}
                         <div className="w-14 h-14 rounded-full bg-green-100 dark:bg-green-500/20 text-green-600 dark:text-green-400 flex items-center justify-center shadow-inner">
                             <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
@@ -783,7 +783,7 @@ export default function BookingForm({ locale }: { locale: string }) {
                             >
                                 {t("successOk")}
                             </button>
-                            
+
                             <button
                                 type="button"
                                 onClick={handleConfirmModal}

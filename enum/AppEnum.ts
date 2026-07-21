@@ -15,6 +15,9 @@ export const enum SiteSettingKeyEnum {
   HOME_PROMO_BG_IMAGE = 'home_promo_bg_image',
   HOME_REVIEW_FEATS = 'home_review_feats',
 
+  HOME_APPOINTMENT_INFO = 'home_contact_info',
+  HOME_GOOGLE_MAP = 'home_google_map',
+
   HERO_DESCRIPTION = 'hero_description',
   HERO_BUTTON = 'hero_button',
 }

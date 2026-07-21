@@ -1,9 +1,30 @@
 import Image from "next/image";
+import { SiteSetting } from "@/services/siteSettings/getSiteSettingsApi";
+import { safeParseJson } from "@/utils/parser";
+
+interface ContactInfoItem {
+  type: string;
+  title: string;
+}
 
 interface Props {
   tContact: (key: string) => string;
+  setting?: SiteSetting | null;
 }
-export default function Contact({ tContact }: Props) {
+
+export default function Contact({ tContact, setting }: Props) {
+  const apiContactData = safeParseJson<ContactInfoItem[]>(setting?.value);
+  
+  let phone = tContact("phoneVal");
+  let email = tContact("emailVal");
+
+  if (apiContactData && Array.isArray(apiContactData)) {
+    const emailItem = apiContactData.find(item => item.title.includes("@"));
+    const phoneItem = apiContactData.find(item => !item.title.includes("@"));
+    if (emailItem) email = emailItem.title;
+    if (phoneItem) phone = phoneItem.title;
+  }
+
   return (
     <section className="relative w-full py-20 md:py-28 px-6 md:px-8 bg-zinc-950 overflow-visible flex flex-col items-center justify-center">
       {/* Background Image with Overlay */}
@@ -51,8 +72,8 @@ export default function Contact({ tContact }: Props) {
               <span className="text-[10px] font-extrabold tracking-[0.18em] text-zinc-400 uppercase">
                 {tContact("phoneLabel")}
               </span>
-              <a href={`tel:${tContact("phoneVal")}`} className="text-sm font-bold text-white hover:text-amber-400 transition-colors mt-0.5">
-                {tContact("phoneVal")}
+              <a href={`tel:${phone}`} className="text-sm font-bold text-white hover:text-amber-400 transition-colors mt-0.5">
+                {phone}
               </a>
             </div>
           </div>
@@ -79,8 +100,8 @@ export default function Contact({ tContact }: Props) {
               <span className="text-[10px] font-extrabold tracking-[0.18em] text-zinc-400 uppercase">
                 {tContact("emailLabel")}
               </span>
-              <a href={`mailto:${tContact("emailVal")}`} className="text-sm font-bold text-white hover:text-amber-400 transition-colors mt-0.5">
-                {tContact("emailVal")}
+              <a href={`mailto:${email}`} className="text-sm font-bold text-white hover:text-amber-400 transition-colors mt-0.5">
+                {email}
               </a>
             </div>
           </div>
