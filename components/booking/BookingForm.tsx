@@ -416,13 +416,13 @@ export default function BookingForm({ locale }: { locale: string }) {
         <div className="max-w-5xl mx-auto px-4 md:px-8 py-10 md:py-16">
             <form onSubmit={handleSubmitBooking} className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
 
-                {/* Left Column: Form Elements */}
-                <div className="md:col-span-7 bg-white dark:bg-zinc-900 border border-zinc-200/50 dark:border-zinc-800/80 rounded-2xl shadow-sm p-6 md:p-8 flex flex-col gap-6 text-zinc-950 dark:text-white">
+                {/* Left Column: Form Elements (Tim Barber Shop Style) */}
+                <div className="md:col-span-7 bg-[#F4F4F0] dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-3xl shadow-md p-6 md:p-8 flex flex-col gap-6 text-zinc-950 dark:text-white">
 
                     {/* Header Intro */}
-                    <div className="flex flex-col gap-1 border-b border-zinc-100 dark:border-zinc-800 pb-3">
-                        <h2 className="text-base font-bold uppercase tracking-wider">{t("customerInfoTitle")}</h2>
-                        <span className="text-[10px] text-amber-500 font-bold">{t("customerInfoSubtitle")}</span>
+                    <div className="flex flex-col gap-1 border-b border-zinc-300 dark:border-zinc-800 pb-3">
+                        <h2 className="text-base font-serif font-black uppercase tracking-wider">{t("customerInfoTitle")}</h2>
+                        <span className="text-[10px] text-emerald-700 dark:text-emerald-400 font-bold uppercase">{t("customerInfoSubtitle")}</span>
                     </div>
 
                     {/* SĐT & Họ Tên side-by-side */}
@@ -663,10 +663,10 @@ export default function BookingForm({ locale }: { locale: string }) {
                         {t("policyNote")}
                     </p>
 
-                    {/* Submit Button */}
+                    {/* Submit Button (Tim Barber Shop Pill Button Style) */}
                     <button
                         type="submit"
-                        className="w-full py-4 bg-amber-500 hover:bg-amber-600 active:scale-[0.99] text-zinc-950 text-xs font-black tracking-wider rounded-lg transition-all duration-300 uppercase shadow-md flex items-center justify-center gap-2"
+                        className="w-full py-4 bg-zinc-950 hover:bg-zinc-800 text-white font-serif font-bold text-xs tracking-wider rounded-full transition-all duration-300 uppercase shadow-md flex items-center justify-center gap-2"
                     >
                         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />

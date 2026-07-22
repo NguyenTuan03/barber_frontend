@@ -20,16 +20,7 @@ export default function FooterLayout() {
       name: "Facebook",
       url: "https://facebook.com",
       icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={1.5}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="w-4.5 h-4.5"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
           <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
         </svg>
       ),
@@ -38,16 +29,7 @@ export default function FooterLayout() {
       name: "Instagram",
       url: "https://instagram.com",
       icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={1.5}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="w-4.5 h-4.5"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
           <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
           <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01" />
         </svg>
@@ -57,16 +39,7 @@ export default function FooterLayout() {
       name: "TikTok",
       url: "https://tiktok.com",
       icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={1.5}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="w-4.5 h-4.5"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
           <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
         </svg>
       ),
@@ -75,16 +48,7 @@ export default function FooterLayout() {
       name: "YouTube",
       url: "https://youtube.com",
       icon: (
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={1.5}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="w-4.5 h-4.5"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
           <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17z" />
           <polygon points="10 15 15 12 10 9" />
         </svg>
@@ -93,64 +57,83 @@ export default function FooterLayout() {
   ];
 
   return (
-    <footer className="w-full bg-zinc-950 text-zinc-300 border-t border-zinc-900 mt-auto">
-      {/* Upper Footer section */}
-      <div className="mx-auto max-w-7xl px-6 md:px-8 py-16 md:py-24 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
+    <footer className="w-full bg-[#141312] text-zinc-100 border-t border-amber-500/20 mt-auto">
+      {/* Top Gold Hairline Accent */}
+      <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-amber-500/40 to-transparent" />
+
+      {/* Main Gold-Accent Footer Content */}
+      <div className="mx-auto max-w-7xl px-6 md:px-10 py-16 md:py-20 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 items-start">
         
-        {/* Left Column: Brand & Socials */}
-        <div className="md:col-span-5 flex flex-col items-start gap-6">
-          <Link href="/" className="flex items-center gap-2.5 group">
-            {/* Double-Bezel Logo */}
-            <div className="w-9 h-9 rounded-xl bg-zinc-900 p-0.5 border border-zinc-800 shadow-inner flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
-              <div className="w-full h-full rounded-[10px] bg-black flex items-center justify-center shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] overflow-hidden">
+        {/* Column 1: Brand & Message */}
+        <div className="md:col-span-4 flex flex-col items-start gap-5">
+          <Link href="/" className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full border border-amber-500/30 p-0.5 flex items-center justify-center bg-amber-500/10">
+              <div className="w-full h-full rounded-full bg-zinc-950 flex items-center justify-center overflow-hidden">
                 <Image
                   src="/common/logo.png"
                   alt="T99 Logo"
-                  width={24}
-                  height={24}
+                  width={28}
+                  height={28}
                   className="w-full h-full object-contain p-1"
                 />
               </div>
             </div>
-            <span className="font-extrabold tracking-widest text-base text-white uppercase font-sans">
-              T99
-            </span>
+            <div className="flex flex-col text-left">
+              <span className="font-serif font-black tracking-widest text-xl text-white uppercase leading-none">
+                T99
+              </span>
+              <span className="text-[9px] font-extrabold tracking-[0.25em] text-amber-400 uppercase mt-0.5">
+                BARBER SHOP
+              </span>
+            </div>
           </Link>
           
-          <p className="text-sm text-zinc-400 max-w-[36ch] leading-relaxed">
+          <p className="text-xs md:text-sm text-zinc-300 max-w-[36ch] leading-relaxed font-normal">
             {t("aboutDesc")}
           </p>
+        </div>
 
-          {/* Social Icons - Double Bezel Pattern */}
-          <div className="flex items-center gap-3 mt-2">
+        {/* Column 2: Working Hours */}
+        <div className="md:col-span-4 flex flex-col items-start gap-3">
+          <h2 className="font-serif font-black text-lg uppercase tracking-widest text-amber-400">
+            {t("hoursTitle")}
+          </h2>
+          <div className="flex flex-col gap-2 text-xs md:text-sm text-zinc-300 font-normal">
+            <p>{t("hoursMon")}</p>
+            <p>{t("hoursTueSun")}</p>
+            <p className="mt-2 text-xs text-amber-400/90 font-mono">t99barbershopvn@gmail.com</p>
+          </div>
+        </div>
+
+        {/* Column 3: Follow Us */}
+        <div className="md:col-span-4 flex flex-col items-start gap-4">
+          <h2 className="font-serif font-black text-lg uppercase tracking-widest text-amber-400">
+            {t("followUsTitle")}
+          </h2>
+          
+          {/* Social Icons */}
+          <div className="flex items-center gap-4">
             {socialLinks.map((social) => (
               <a
                 key={social.name}
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 rounded-full bg-zinc-900 p-0.5 border border-zinc-800/80 flex items-center justify-center hover:border-amber-500/50 hover:scale-105 transition-all duration-300 group/icon"
+                className="w-10 h-10 rounded-full border border-amber-500/20 bg-amber-500/10 flex items-center justify-center text-amber-300 hover:bg-amber-500 hover:text-zinc-950 transition-all duration-300"
                 aria-label={social.name}
               >
-                <div className="w-full h-full rounded-full bg-black flex items-center justify-center text-zinc-400 group-hover/icon:text-amber-500 transition-colors duration-300">
-                  {social.icon}
-                </div>
+                {social.icon}
               </a>
             ))}
           </div>
-        </div>
 
-        {/* Middle Column: Quick Links */}
-        <div className="md:col-span-3 flex flex-col items-start gap-4">
-          <h2 className="text-xs uppercase font-extrabold tracking-[0.2em] text-white">
-            {t("linksTitle")}
-          </h2>
-          <nav className="flex flex-col gap-3 text-sm">
+          {/* Quick Nav Links */}
+          <nav className="flex items-center gap-4 text-xs font-serif font-bold tracking-wider uppercase mt-4 text-zinc-300">
             {quickLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.path}
-                className="text-zinc-400 hover:text-white transition-colors duration-200"
+                className="hover:text-amber-400 transition-colors"
               >
                 {tHeader(link.name)}
               </Link>
@@ -158,43 +141,15 @@ export default function FooterLayout() {
           </nav>
         </div>
 
-        {/* Right Column: Contact & Hours */}
-        <div className="md:col-span-4 flex flex-col items-start gap-4">
-          <h2 className="text-xs uppercase font-extrabold tracking-[0.2em] text-white">
-            {t("contactTitle")}
-          </h2>
-          
-          <div className="flex flex-col gap-3 text-sm text-zinc-400">
-            <p className="leading-relaxed">
-              <span className="block font-semibold text-white mb-0.5">{t("addressLabel")}</span>
-              {t("addressVal")}
-            </p>
-            
-            <p>
-              <span className="font-semibold text-white mr-1.5">{t("phoneLabel")}</span>
-              <a href="tel:0901234567" className="hover:text-amber-500 transition-colors">
-                090 123 4567
-              </a>
-            </p>
-
-            <p>
-              <span className="font-semibold text-white mr-1.5">{t("hoursLabel")}</span>
-              {t("hoursVal")}
-            </p>
-          </div>
-        </div>
-
       </div>
 
-      {/* Lower Footer section */}
-      <div className="w-full border-t border-zinc-900/60 bg-zinc-950/80 px-6 py-6 text-center text-xs text-zinc-500">
-        <div className="mx-auto max-w-7xl flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p>{t("rights")}</p>
-          <div className="flex items-center gap-1.5 text-zinc-600">
-            <span>Premium Grooming</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-amber-500/60" />
-            <span>Established 2026</span>
-          </div>
+      {/* Bottom Bar */}
+      <div className="w-full border-t border-zinc-800/80 bg-[#0C0C0B] px-6 py-5 text-center text-xs text-zinc-400 font-sans">
+        <div className="mx-auto max-w-7xl flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="font-serif font-bold uppercase tracking-widest text-amber-400">
+            T99 BARBER SHOP - FROM HEART TO HAIR!
+          </p>
+          <p className="text-[11px] text-zinc-500">{t("rights")}</p>
         </div>
       </div>
     </footer>

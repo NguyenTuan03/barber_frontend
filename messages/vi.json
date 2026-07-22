@@ -29,8 +29,12 @@
     "addressLabel": "Địa chỉ:",
     "addressVal": "33/1 Quốc Hương, P. An Khánh, TP. HCM",
     "phoneLabel": "Điện thoại:",
+    "hoursTitle": "GIỜ LÀM VIỆC",
     "hoursLabel": "Giờ mở cửa:",
     "hoursVal": "9:00 - 21:00 (Hàng ngày)",
+    "hoursMon": "Thứ 2: 9:00am – 5:00pm",
+    "hoursTueSun": "Thứ 3 – CN: 9:00am – 8:00pm",
+    "followUsTitle": "FOLLOW US",
     "rights": "© 2026 T99 Barber Shop. Bảo lưu mọi quyền."
   },
   "Banner": {
@@ -56,6 +60,32 @@
     "stat2Suffix": "+",
     "stat2Label": "NĂM KINH NGHIỆM"
   },
+  "HomeAboutService": {
+    "description": "T99 mang đến trải nghiệm cắt tóc chuyên nghiệp chuẩn salon trong không gian sang trọng, tinh tế. Đội ngũ thợ giàu kinh nghiệm luôn chú trọng tỉ mỉ từng chi tiết.",
+    "stat1Label": "Dịch vụ tuyệt vời!",
+    "stat2Label": "Khách hàng đánh giá hài lòng"
+  },
+  "HomeServices": {
+    "tagline": "T99 BARBER SHOP - FROM HEART TO HAIR!",
+    "title": "DỊCH VỤ - SẢN PHẨM",
+    "subtitle": "Với T99 Barbershop bạn sẽ được trải nghiệm những dịch vụ tốt nhất trong một không gian chuyên nghiệp, thân thiện & gần gũi!",
+    "detailPriceTitle": "BẢNG GIÁ DỊCH VỤ CHI TIẾT",
+    "card1Title": "CẮT - LÀM HÓA CHẤT",
+    "card1Desc": "T99 cung cấp đa dạng dịch vụ cắt: Cắt Xả, Senior Cắt, Master Cắt và làm hóa chất: Uốn, Ép, Nhuộm,...",
+    "card2Title": "GỘI ĐẦU - RELAX",
+    "card2Desc": "Trải nghiệm một không gian yên tĩnh và nhẹ nhàng giúp bạn có những phút giây thư giãn và thoải mái.",
+    "card3Title": "SẢN PHẨM CHĂM SÓC",
+    "card3Desc": "T99 cung cấp những sản phẩm chăm sóc & tạo kiểu tóc chính hãng, chất lượng đáp ứng đa dạng cho các kiểu tóc.",
+    "bookBtn": "ĐẶT LỊCH NGAY",
+    "haircutTitle": "CẮT TÓC NAM CHUYÊN NGHIỆP",
+    "haircutDesc": "Cắt gội massage tạo kiểu chuẩn salon cao cấp.",
+    "shaveTitle": "CẠO RÂU KHĂN NÓNG",
+    "shaveDesc": "Cạo râu sạch sẽ kết hợp chườm khăn nóng thư giãn.",
+    "comboTitle": "COMBO CHĂM SÓC TOÀN DIỆN",
+    "comboDesc": "Gói cắt tóc, tỉa râu và dưỡng da mặt toàn diện.",
+    "kidTitle": "CẮT TÓC TRẺ EM",
+    "kidDesc": "Cắt tóc vui vẻ, êm ái dành riêng cho bé trai."
+  },
   "Services": {
     "title": "DANH SÁCH DỊCH VỤ CỦA CHÚNG TÔI",
     "subtitle": "Chúng tôi cung cấp đầy đủ các dịch vụ chăm sóc tóc và râu chuyên nghiệp tại nhà, được thực hiện bởi những thợ lành nghề nhất.",
@@ -73,9 +103,29 @@
     "beardGroomingDesc": "Gội, dưỡng ẩm và tạo kiểu râu chuyên sâu bằng tinh dầu cao cấp.",
     "bookBtn": "ĐẶT LỊCH HẸN NGAY"
   },
+  "HomeContactInfo": {
+    "appointmentTitle": "BOOK LỊCH HẸN!",
+    "formSectionTitle": "GỬI THÔNG TIN LIÊN HỆ",
+    "description": "Để lại thông tin liên hệ và yêu cầu của bạn, chúng tôi sẽ liên hệ lại ngay lập tức để xác nhận lịch hẹn của bạn.",
+    "phoneVal": "(475) 453 - 3465",
+    "emailVal": "hello@example.com",
+    "formName": "HỌ VÀ TÊN",
+    "formSubject": "TIÊU ĐỀ HẸN",
+    "formPhone": "SỐ ĐIỆN THOẠI",
+    "formEmail": "ĐỊA CHỈ EMAIL",
+    "formMessage": "VUI LÒNG NHẬP NỘI DUNG TẠI ĐÂY...",
+    "formBtn": "ĐẶT LỊCH HẸN NGAY"
+  },
   "Promo": {
     "title": "TRẠI NGHIỆM SỰ SANG TRỌNG CỦA DỊCH VỤ CẮT TÓC RIÊNG NGAY TẠI NHÀ BẠN",
     "bookBtn": "ĐẶT LỊCH HẸN NGAY"
+  },
+  "HomePromo": {
+    "title": "TRẢI NGHIỆM DỊCH VỤ CẮT TÓC CHUYÊN NGHIỆP TẠI T99 BARBER SHOP",
+    "bookBtn": "ĐẶT LỊCH HẸN NGAY"
+  },
+  "HomeWhyChooseUs": {
+    "title": "TẠI SAO CHỌN CHÚNG TÔI"
   },
   "WhyChoose": {
     "title": "TẠI SAO CHỌN CHÚNG TÔI",
@@ -95,6 +145,8 @@
     "quoteAuthor": "SAM HOUSTON"
   },
   "Contact": {
+    "appointmentTitle": "BOOK LỊCH HẸN!",
+    "formSectionTitle": "GỬI THÔNG TIN LIÊN HỆ",
     "title": "ĐẶT LỊCH HẸN",
     "description": "Để lại thông tin liên hệ và yêu cầu của bạn, chúng tôi sẽ liên hệ lại ngay lập tức để xác nhận lịch hẹn của bạn.",
     "phoneLabel": "GỌI CHO CHÚNG TÔI",
