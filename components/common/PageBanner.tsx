@@ -14,7 +14,7 @@ export default function PageBanner({ title, breadcrumbs }: PageBannerProps) {
     return (
         <section className="relative w-full py-20 md:py-24 px-6 md:px-8 bg-[#FAFAFA] dark:bg-zinc-950 overflow-hidden flex flex-col items-center justify-center border-b border-zinc-200/80 dark:border-zinc-800">
             {/* Banner Content */}
-            <div className="relative z-20 w-full max-w-5xl mx-auto flex flex-col items-center gap-4 text-center mt-12">
+            <div className="relative z-20 w-full max-w-5xl mx-auto flex flex-col items-center gap-4 text-center">
                 {/* Title with Serif Editorial Font */}
                 <h1 className="text-zinc-950 dark:text-white font-serif font-black text-3xl md:text-5xl tracking-tight uppercase">
                     {title}

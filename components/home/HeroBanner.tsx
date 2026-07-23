@@ -10,7 +10,7 @@ type HeroBannerProps = {
 
 export default function HeroBanner({ title, subtitle, tBanner }: HeroBannerProps) {
   return (
-    <section className="relative w-full min-h-[85vh] md:min-h-[90vh] flex flex-col items-center justify-center pt-32 md:pt-40 pb-28 md:pb-36 px-6 bg-zinc-950 text-white overflow-hidden">
+    <section className="relative w-full min-h-[75vh] md:min-h-[85vh] flex flex-col items-center justify-center pt-16 md:pt-24 pb-24 md:pb-32 px-6 bg-zinc-950 text-white overflow-hidden">
       
       {/* Background Image Full Size Tràn Lề */}
       <div className="absolute inset-0 w-full h-full z-0">

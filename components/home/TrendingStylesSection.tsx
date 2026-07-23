@@ -115,7 +115,7 @@ export default function TrendingStylesSection({
                                         href="/booking"
                                         className="w-full py-2.5 px-4 rounded-xl bg-zinc-100 dark:bg-zinc-800/80 hover:bg-amber-500 dark:hover:bg-amber-500 text-zinc-900 dark:text-amber-400 hover:text-zinc-950 dark:hover:text-zinc-950 font-sans font-bold text-xs tracking-wider uppercase flex items-center justify-center gap-2 transition-all duration-300 border border-zinc-200 dark:border-amber-500/30 hover:border-amber-500"
                                     >
-                                        <span>Đặt lịch kiểu này</span>
+                                        <span>{tStyles("bookThisStyle")}</span>
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             className="w-3.5 h-3.5"

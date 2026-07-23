@@ -7,7 +7,7 @@ import { useState, useEffect, useSyncExternalStore } from "react";
 import Image from "next/image";
 import { useTheme } from "@wrksz/themes/client";
 
-const emptySubscribe = () => () => {};
+const emptySubscribe = () => () => { };
 
 export default function HeaderLayout() {
     const t = useTranslations("Header");
@@ -71,42 +71,50 @@ export default function HeaderLayout() {
     const isDarkMode = isMounted && (resolvedTheme === "dark" || theme === "dark");
 
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 w-full px-4 sm:px-6 md:px-8 pt-3 md:pt-4 pointer-events-none">
-            <div
-                className={`mx-auto max-w-6xl pointer-events-auto transition-all duration-500 rounded-full border ${
-                    scrolled
-                        ? "bg-white/90 dark:bg-zinc-950/90 border-zinc-200/90 dark:border-zinc-800/90 shadow-lg shadow-black/5 backdrop-blur-xl py-2 px-5 md:px-7"
-                        : "bg-white/75 dark:bg-zinc-950/75 border-zinc-200/60 dark:border-zinc-800/60 shadow-md shadow-black/5 backdrop-blur-md py-3 px-6 md:px-8"
-                } flex items-center justify-between`}
-            >
-                {/* Logo Section */}
+        <header
+            className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-500 border-b ${
+                isOpen
+                    ? "bg-white dark:bg-zinc-950 border-zinc-200/80 dark:border-zinc-800/80 py-4 md:py-3.5 shadow-md"
+                    : scrolled
+                    ? "bg-white/90 dark:bg-zinc-950/90 border-zinc-200/80 dark:border-zinc-800/80 backdrop-blur-xl py-3.5 md:py-2.5 shadow-sm"
+                    : "bg-white/80 dark:bg-zinc-950/80 border-zinc-200/40 dark:border-zinc-800/40 backdrop-blur-lg py-4.5 md:py-3.5"
+            }`}
+        >
+            <div className="mx-auto max-w-7xl px-5 md:px-10 flex items-center justify-between">
+
+                {/* Brand Logo & Slim Heritage Title */}
                 <Link href="/" className="flex items-center gap-3 group">
-                    <div className="w-8 h-8 relative shrink-0 transition-transform duration-300 group-hover:scale-105">
+                    <div className="w-9 h-9 md:w-8 md:h-8 relative shrink-0 transition-transform duration-300 group-hover:scale-105">
                         <Image
                             src="/common/logo.png"
                             alt="T99 Barber Shop Logo"
-                            width={32}
-                            height={32}
+                            width={36}
+                            height={36}
                             className="w-full h-full object-contain"
                         />
                     </div>
-                    <span className="font-serif font-black tracking-widest text-base text-zinc-950 dark:text-white uppercase font-sans">
-                        T99 <span className="text-amber-500 text-xs font-sans font-bold tracking-widest hidden sm:inline-block">BARBER</span>
-                    </span>
+                    <div className="flex flex-col">
+                        <span className="font-serif font-black tracking-widest text-base md:text-lg text-zinc-950 dark:text-white uppercase leading-none">
+                            T99 <span className="text-amber-500 font-sans font-bold text-xs">BARBER</span>
+                        </span>
+                        <span className="text-[9px] font-sans font-medium tracking-[0.2em] text-zinc-500 dark:text-zinc-400 uppercase leading-none mt-1 hidden sm:block">
+                            LUXURY HAIR SALON
+                        </span>
+                    </div>
                 </Link>
 
-                {/* Center Navigation Links - Floating Pill Items */}
-                <nav className="hidden md:flex items-center gap-1.5 p-1 rounded-full bg-zinc-100/70 dark:bg-zinc-900/60 border border-zinc-200/50 dark:border-zinc-800/50">
+                {/* Center Navigation Links - Slim Understated Style (Tim Barber Shop Inspired) */}
+                <nav className="hidden md:flex items-center gap-8 lg:gap-10">
                     {headerItem.map((item) => {
                         const isActive = pathname === item.path;
                         return (
                             <Link
                                 key={item.name}
                                 href={item.path}
-                                className={`px-4 py-1.5 rounded-full text-xs font-sans font-extrabold tracking-wider uppercase transition-all duration-300 ${
+                                className={`text-[11px] font-sans font-extrabold tracking-[0.18em] uppercase transition-all duration-300 relative py-1.5 ${
                                     isActive
-                                        ? "bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 shadow-sm"
-                                        : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-200/50 dark:hover:bg-zinc-800/50"
+                                        ? "text-amber-600 dark:text-amber-400 font-black after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-amber-500 after:rounded-full"
+                                        : "text-zinc-700 dark:text-zinc-300 hover:text-amber-600 dark:hover:text-amber-400"
                                 }`}
                             >
                                 {t(item.name)}
@@ -116,11 +124,11 @@ export default function HeaderLayout() {
                 </nav>
 
                 {/* Right Action Section */}
-                <div className="flex items-center gap-2.5">
-                    {/* Theme Switcher Desktop */}
+                <div className="flex items-center gap-3">
+                    {/* Theme Switcher Button */}
                     <button
                         onClick={toggleTheme}
-                        className="w-8 h-8 rounded-full border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600 text-zinc-800 dark:text-zinc-200 transition-all duration-200 cursor-pointer flex items-center justify-center bg-zinc-100/50 dark:bg-zinc-900/50"
+                        className="w-9 h-9 md:w-8 md:h-8 rounded-full border border-zinc-200/80 dark:border-zinc-800/80 hover:border-amber-500/50 dark:hover:border-amber-400/50 text-zinc-800 dark:text-zinc-200 transition-all duration-300 cursor-pointer flex items-center justify-center bg-zinc-100/40 dark:bg-zinc-900/40 active:scale-95"
                         aria-label="Toggle theme"
                         title={isDarkMode ? t("themeLight") : t("themeDark")}
                     >
@@ -135,10 +143,10 @@ export default function HeaderLayout() {
                         )}
                     </button>
 
-                    {/* Language Switcher Desktop */}
+                    {/* Language Switcher Button */}
                     <button
                         onClick={toggleLanguage}
-                        className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600 text-[11px] font-sans font-extrabold tracking-wider text-zinc-800 dark:text-zinc-200 transition-all duration-200 cursor-pointer uppercase bg-zinc-100/50 dark:bg-zinc-900/50"
+                        className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-zinc-200/80 dark:border-zinc-800/80 hover:border-amber-500/50 dark:hover:border-amber-400/50 text-[11px] font-sans font-extrabold tracking-wider text-zinc-800 dark:text-zinc-200 transition-all duration-300 cursor-pointer uppercase bg-zinc-100/40 dark:bg-zinc-900/40"
                         aria-label="Toggle language"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-3.5 h-3.5 text-zinc-500">
@@ -147,51 +155,46 @@ export default function HeaderLayout() {
                         <span>{locale}</span>
                     </button>
 
-                    {/* Book Now Button Desktop (Nested Icon Pill Button Architecture) */}
+                    {/* Book Now Button Desktop (Slim Elegant Amber Pill Button) */}
                     <Link
                         href="/booking"
-                        className="hidden sm:inline-flex items-center gap-2 pl-4 pr-1.5 py-1.5 bg-amber-500 hover:bg-amber-400 text-zinc-950 font-sans font-extrabold text-xs tracking-wider rounded-full transition-all duration-300 uppercase shadow-md shadow-amber-500/10 group"
+                        className="hidden sm:inline-flex px-6 py-2 bg-amber-500 hover:bg-amber-400 text-zinc-950 font-sans font-extrabold text-[11px] tracking-widest rounded-full transition-all duration-300 uppercase shadow-md shadow-amber-500/10 active:scale-95"
                     >
-                        <span>{t("cta")}</span>
-                        <div className="w-6 h-6 rounded-full bg-zinc-950 text-amber-400 flex items-center justify-center transition-transform duration-300 group-hover:translate-x-0.5">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-3 h-3">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                            </svg>
-                        </div>
+                        {t("cta")}
                     </Link>
 
                     {/* Mobile Hamburger Button */}
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className="md:hidden relative w-8 h-8 flex flex-col justify-center items-center rounded-full border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white bg-zinc-100/60 dark:bg-zinc-900/60 transition-colors"
+                        className="md:hidden relative w-10 h-10 flex flex-col justify-center items-center rounded-full border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white bg-zinc-100/60 dark:bg-zinc-900/60 transition-colors active:scale-95"
                         aria-label="Toggle menu"
                     >
-                        <div className="w-4 h-3.5 relative flex flex-col justify-between items-center">
-                            <span className={`w-4 h-0.5 bg-current rounded-full transition-all duration-300 origin-center ${isOpen ? "rotate-45 translate-y-[6px]" : ""}`} />
-                            <span className={`w-4 h-0.5 bg-current rounded-full transition-all duration-300 ${isOpen ? "opacity-0" : "opacity-100"}`} />
-                            <span className={`w-4 h-0.5 bg-current rounded-full transition-all duration-300 origin-center ${isOpen ? "-rotate-45 -translate-y-[6px]" : ""}`} />
+                        <div className="w-4.5 h-4 relative flex flex-col justify-between items-center">
+                            <span className={`w-4.5 h-0.5 bg-current rounded-full transition-all duration-300 origin-center ${isOpen ? "rotate-45 translate-y-[7px]" : ""}`} />
+                            <span className={`w-4.5 h-0.5 bg-current rounded-full transition-all duration-300 ${isOpen ? "opacity-0" : "opacity-100"}`} />
+                            <span className={`w-4.5 h-0.5 bg-current rounded-full transition-all duration-300 origin-center ${isOpen ? "-rotate-45 -translate-y-[7px]" : ""}`} />
                         </div>
                     </button>
                 </div>
             </div>
 
-            {/* Mobile Drawer Menu */}
+            {/* Mobile Glass Drawer Menu Seamlessly Attached to Header */}
             <div
-                className={`fixed inset-x-4 top-20 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-2xl border border-zinc-200/90 dark:border-zinc-800/90 rounded-3xl z-40 md:hidden flex flex-col justify-between p-6 shadow-2xl overflow-y-auto transition-all duration-300 ${
-                    isOpen ? "opacity-100 pointer-events-auto translate-y-0" : "opacity-0 pointer-events-none -translate-y-4"
+                className={`absolute top-full left-0 right-0 w-full bg-white dark:bg-zinc-950 border-b border-zinc-200/80 dark:border-zinc-800/80 z-40 md:hidden flex flex-col justify-between p-5 sm:p-6 shadow-2xl transition-all duration-300 ${
+                    isOpen ? "opacity-100 pointer-events-auto translate-y-0" : "opacity-0 pointer-events-none -translate-y-2"
                 }`}
-                style={{ maxHeight: "calc(100dvh - 100px)" }}
+                style={{ maxHeight: "calc(100dvh - 70px)" }}
             >
-                <nav className="flex flex-col gap-4 font-sans text-lg font-extrabold tracking-wider text-zinc-900 dark:text-white uppercase">
+                <nav className="flex flex-col gap-1 font-sans text-sm font-extrabold tracking-wider text-zinc-900 dark:text-white uppercase">
                     {headerItem.map((item) => (
                         <Link
                             key={item.name}
                             href={item.path}
                             onClick={() => setIsOpen(false)}
-                            className="py-2.5 px-4 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-900 hover:text-amber-600 dark:hover:text-amber-400 transition-colors flex items-center justify-between"
+                            className="py-3 px-4 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-900/80 hover:text-amber-600 dark:hover:text-amber-400 transition-all flex items-center justify-between border-b border-zinc-100 dark:border-zinc-900/60"
                         >
                             <span>{t(item.name)}</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 text-zinc-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 text-amber-500">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                             </svg>
                         </Link>
@@ -202,7 +205,7 @@ export default function HeaderLayout() {
                     {/* Theme Switcher Mobile */}
                     <button
                         onClick={toggleTheme}
-                        className="py-3 px-4 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100/70 dark:bg-zinc-900/70 text-zinc-900 dark:text-white text-xs font-sans font-bold uppercase tracking-wider flex justify-between items-center transition-colors"
+                        className="py-3 px-4 rounded-2xl border border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-100/80 dark:bg-zinc-900/80 text-zinc-900 dark:text-white text-xs font-sans font-bold uppercase tracking-wider flex justify-between items-center transition-colors"
                     >
                         <span className="text-zinc-600 dark:text-zinc-400">{t("theme")}</span>
                         <span className="text-amber-600 dark:text-amber-400 font-extrabold flex items-center gap-2">
@@ -227,7 +230,7 @@ export default function HeaderLayout() {
                     {/* Language Switcher Mobile */}
                     <button
                         onClick={toggleLanguage}
-                        className="py-3 px-4 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100/70 dark:bg-zinc-900/70 text-zinc-900 dark:text-white text-xs font-sans font-bold uppercase tracking-wider flex justify-between items-center transition-colors"
+                        className="py-3 px-4 rounded-2xl border border-zinc-200/80 dark:border-zinc-800/80 bg-zinc-100/80 dark:bg-zinc-900/80 text-zinc-900 dark:text-white text-xs font-sans font-bold uppercase tracking-wider flex justify-between items-center transition-colors"
                     >
                         <span className="text-zinc-600 dark:text-zinc-400">{t("language")}</span>
                         <span className="text-amber-600 dark:text-amber-400 font-extrabold">{locale === "vi" ? "Tiếng Việt (VI)" : "English (EN)"}</span>
