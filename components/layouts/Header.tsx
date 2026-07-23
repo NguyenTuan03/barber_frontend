@@ -81,7 +81,7 @@ export default function HeaderLayout() {
                 
                 {/* Logo Section - Logo Mặc Định */}
                 <Link href="/" className="flex items-center gap-2.5 group">
-                    <div className="w-9 h-9 relative flex-shrink-0">
+                    <div className="w-9 h-9 relative shrink-0">
                         <Image
                             src="/common/logo.png"
                             alt="T99 Barber Shop Logo"

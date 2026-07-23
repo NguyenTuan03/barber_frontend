@@ -207,5 +207,38 @@
     "detailsServices": "Dịch vụ",
     "detailsBookOther": "Đặt lịch khác",
     "detailsMinutes": "{minutes} phút - {barber}"
+  },
+  "BarberTeam": {
+    "tagline": "ĐỘI NGŨ CHUYÊN GIA",
+    "title": "NGHỆ NHÂN TẠO KIỂU T99",
+    "subtitle": "Đội ngũ thợ cắt tóc tay nghề cao, giàu kinh nghiệm và đầy tâm huyết sẵn sàng mang đến diện mạo hoàn hảo nhất cho quý khách.",
+    "experience": "{years} năm kinh nghiệm",
+    "barber1Name": "Arthur Pendelton",
+    "barber1Role": "Master Barber & Founder",
+    "barber1Exp": "12",
+    "barber2Name": "Marcus Vance",
+    "barber2Role": "Senior Fade Specialist",
+    "barber2Exp": "8",
+    "barber3Name": "David Miller",
+    "barber3Role": "Beard & Grooming Master",
+    "barber3Exp": "10",
+    "bookWithBarber": "Đặt lịch với {name}"
+  },
+  "TrendingStyles": {
+    "tagline": "LOOKBOOK & TRENDING",
+    "title": "BỘ SƯU TẬP MẪU TÓC THỜI THƯỢNG",
+    "subtitle": "Khám phá những phong cách tóc nam dẫn đầu xu hướng, được chế tác tỉ mỉ bởi nghệ nhân T99 Barber Shop.",
+    "style1Name": "Textured Crop Fade",
+    "style1Desc": "Tóc ngắn hiện đại với phần mái tỉa layer tự nhiên kết hợp kỹ thuật cạo sát mượt mà.",
+    "style1Tag": "Hot Trend 2026",
+    "style2Name": "Classic Side Part",
+    "style2Desc": "Phong cách quý ông cổ điển rẽ ngôi thanh lịch, tạo phom phồng chải chuốt sang trọng.",
+    "style2Tag": "Gentleman Classic",
+    "style3Name": "High Skin Fade Quiff",
+    "style3Desc": "Tóc vuốt Quiff đỉnh đầu tạo độ phồng cao phối hợp cạo sát hai bên đầy nam tính.",
+    "style3Tag": "Modern Quiff",
+    "style4Name": "Slick Back Drop Fade",
+    "style4Desc": "Tóc chải ngược lôi cuốn phối hợp kỹ thuật Drop Fade ôm sát đường gáy.",
+    "style4Tag": "Slick Premium"
   }
 }

@@ -207,5 +207,38 @@
     "detailsServices": "Services",
     "detailsBookOther": "Book Another",
     "detailsMinutes": "{minutes} mins - {barber}"
+  },
+  "BarberTeam": {
+    "tagline": "EXPERT TEAM",
+    "title": "MEET OUR MASTER BARBERS",
+    "subtitle": "Our team of highly skilled, passionate artisans dedicated to precision grooming and timeless style for every gentleman.",
+    "experience": "{years} years exp",
+    "barber1Name": "Arthur Pendelton",
+    "barber1Role": "Master Barber & Founder",
+    "barber1Exp": "12",
+    "barber2Name": "Marcus Vance",
+    "barber2Role": "Senior Fade Specialist",
+    "barber2Exp": "8",
+    "barber3Name": "David Miller",
+    "barber3Role": "Beard & Grooming Master",
+    "barber3Exp": "10",
+    "bookWithBarber": "Book with {name}"
+  },
+  "TrendingStyles": {
+    "tagline": "LOOKBOOK & TRENDING",
+    "title": "TRENDING HAIRSTYLES GALLERY",
+    "subtitle": "Explore top gentleman hairstyle trends meticulously crafted by T99 master barbers.",
+    "style1Name": "Textured Crop Fade",
+    "style1Desc": "Modern short haircut with natural layered crop top and sharp skin fade finish.",
+    "style1Tag": "Hot Trend 2026",
+    "style2Name": "Classic Side Part",
+    "style2Desc": "Timeless gentleman side part with elegant volume and refined shine.",
+    "style2Tag": "Gentleman Classic",
+    "style3Name": "High Skin Fade Quiff",
+    "style3Desc": "Dynamic quiff top with bold high skin fade for a confident style.",
+    "style3Tag": "Modern Quiff",
+    "style4Name": "Slick Back Drop Fade",
+    "style4Desc": "Sophisticated slicked back hair paired with a seamless drop fade contours.",
+    "style4Tag": "Slick Premium"
   }
 }

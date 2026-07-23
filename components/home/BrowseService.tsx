@@ -101,11 +101,12 @@ export default function BrowserService({
                         <ScrollReveal key={idx} direction="up" delay={0.15 + idx * 0.1} className="h-full">
                             <div className="flex flex-col h-full bg-[#FDFBF7] text-zinc-950 rounded-2xl overflow-hidden shadow-lg transition-transform duration-300 hover:-translate-y-1 border border-amber-500/20">
                                 {/* Card Image */}
-                                <div className="w-full h-48 relative overflow-hidden flex-shrink-0">
+                                <div className="w-full h-48 relative overflow-hidden shrink-0">
                                     <Image
                                         src={card.img}
                                         alt={card.title}
                                         fill
+                                        sizes="(max-width: 768px) 100vw, 33vw"
                                         className="object-cover"
                                     />
                                 </div>
@@ -141,7 +142,7 @@ export default function BrowserService({
                                             {service.description}
                                         </span>
                                     </div>
-                                    <span className="font-sans font-bold text-sm text-amber-400 ml-4 flex-shrink-0">
+                                    <span className="font-sans font-bold text-sm text-amber-400 ml-4 shrink-0">
                                         {service.price}
                                     </span>
                                 </div>
