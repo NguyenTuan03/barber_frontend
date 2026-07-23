@@ -70,43 +70,42 @@ export default function HeaderLayout() {
     const isDarkMode = isMounted && (resolvedTheme === "dark" || theme === "dark");
 
     return (
-        <header
-            className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
-                scrolled
-                    ? "bg-white/95 dark:bg-zinc-950/95 border-b border-zinc-200/80 dark:border-zinc-800/80 shadow-xs py-3"
-                    : "bg-white/80 dark:bg-zinc-950/80 border-b border-zinc-200/50 dark:border-zinc-900 py-4"
-            } backdrop-blur-md`}
-        >
-            <div className="mx-auto max-w-7xl px-6 md:px-10 flex items-center justify-between">
-                
-                {/* Logo Section - Logo Mặc Định */}
-                <Link href="/" className="flex items-center gap-2.5 group">
-                    <div className="w-9 h-9 relative shrink-0">
+        <header className="fixed top-0 left-0 right-0 z-50 w-full px-4 sm:px-6 md:px-8 pt-3 md:pt-4 pointer-events-none">
+            <div
+                className={`mx-auto max-w-6xl pointer-events-auto transition-all duration-500 rounded-full border ${
+                    scrolled
+                        ? "bg-white/90 dark:bg-zinc-950/90 border-zinc-200/90 dark:border-zinc-800/90 shadow-lg shadow-black/5 backdrop-blur-xl py-2 px-5 md:px-7"
+                        : "bg-white/75 dark:bg-zinc-950/75 border-zinc-200/60 dark:border-zinc-800/60 shadow-md shadow-black/5 backdrop-blur-md py-3 px-6 md:px-8"
+                } flex items-center justify-between`}
+            >
+                {/* Logo Section */}
+                <Link href="/" className="flex items-center gap-3 group">
+                    <div className="w-8 h-8 relative shrink-0 transition-transform duration-300 group-hover:scale-105">
                         <Image
                             src="/common/logo.png"
                             alt="T99 Barber Shop Logo"
-                            width={36}
-                            height={36}
+                            width={32}
+                            height={32}
                             className="w-full h-full object-contain"
                         />
                     </div>
-                    <span className="font-extrabold tracking-widest text-base text-zinc-900 dark:text-white uppercase font-sans">
-                        T99
+                    <span className="font-serif font-black tracking-widest text-base text-zinc-950 dark:text-white uppercase font-sans">
+                        T99 <span className="text-amber-500 text-xs font-sans font-bold tracking-widest hidden sm:inline-block">BARBER</span>
                     </span>
                 </Link>
 
-                {/* Center Navigation Links - Clear Sans-Serif Font */}
-                <nav className="hidden md:flex items-center gap-8">
+                {/* Center Navigation Links - Floating Pill Items */}
+                <nav className="hidden md:flex items-center gap-1.5 p-1 rounded-full bg-zinc-100/70 dark:bg-zinc-900/60 border border-zinc-200/50 dark:border-zinc-800/50">
                     {headerItem.map((item) => {
                         const isActive = pathname === item.path;
                         return (
                             <Link
                                 key={item.name}
                                 href={item.path}
-                                className={`text-xs font-sans font-extrabold tracking-wider uppercase transition-colors relative py-1 ${
+                                className={`px-4 py-1.5 rounded-full text-xs font-sans font-extrabold tracking-wider uppercase transition-all duration-300 ${
                                     isActive
-                                        ? "text-zinc-950 dark:text-white after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-amber-500"
-                                        : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white"
+                                        ? "bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 shadow-sm"
+                                        : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-200/50 dark:hover:bg-zinc-800/50"
                                 }`}
                             >
                                 {t(item.name)}
@@ -116,11 +115,11 @@ export default function HeaderLayout() {
                 </nav>
 
                 {/* Right Action Section */}
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2.5">
                     {/* Theme Switcher Desktop */}
                     <button
                         onClick={toggleTheme}
-                        className="p-2 rounded-full border border-zinc-300 dark:border-zinc-700 hover:border-zinc-950 dark:hover:border-white text-zinc-800 dark:text-zinc-200 transition-all duration-200 cursor-pointer shadow-2xs flex items-center justify-center"
+                        className="w-8 h-8 rounded-full border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600 text-zinc-800 dark:text-zinc-200 transition-all duration-200 cursor-pointer flex items-center justify-center bg-zinc-100/50 dark:bg-zinc-900/50"
                         aria-label="Toggle theme"
                         title={isDarkMode ? t("themeLight") : t("themeDark")}
                     >
@@ -138,7 +137,7 @@ export default function HeaderLayout() {
                     {/* Language Switcher Desktop */}
                     <button
                         onClick={toggleLanguage}
-                        className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-zinc-300 dark:border-zinc-700 hover:border-zinc-950 dark:hover:border-white text-[11px] font-sans font-bold tracking-wider text-zinc-800 dark:text-zinc-200 transition-all duration-200 cursor-pointer uppercase shadow-2xs"
+                        className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600 text-[11px] font-sans font-extrabold tracking-wider text-zinc-800 dark:text-zinc-200 transition-all duration-200 cursor-pointer uppercase bg-zinc-100/50 dark:bg-zinc-900/50"
                         aria-label="Toggle language"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor" className="w-3.5 h-3.5 text-zinc-500">
@@ -147,24 +146,29 @@ export default function HeaderLayout() {
                         <span>{locale}</span>
                     </button>
 
-                    {/* Book Now Button Desktop */}
+                    {/* Book Now Button Desktop (Nested Icon Pill Button Architecture) */}
                     <Link
                         href="/booking"
-                        className="hidden sm:inline-flex px-5 py-2.5 bg-zinc-950 hover:bg-zinc-800 dark:bg-white dark:hover:bg-zinc-100 text-white dark:text-zinc-950 font-sans font-bold text-xs tracking-wider rounded-full transition-all duration-300 uppercase shadow-2xs"
+                        className="hidden sm:inline-flex items-center gap-2 pl-4 pr-1.5 py-1.5 bg-amber-500 hover:bg-amber-400 text-zinc-950 font-sans font-extrabold text-xs tracking-wider rounded-full transition-all duration-300 uppercase shadow-md shadow-amber-500/10 group"
                     >
-                        {t("cta")}
+                        <span>{t("cta")}</span>
+                        <div className="w-6 h-6 rounded-full bg-zinc-950 text-amber-400 flex items-center justify-center transition-transform duration-300 group-hover:translate-x-0.5">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-3 h-3">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                            </svg>
+                        </div>
                     </Link>
 
                     {/* Mobile Hamburger Button */}
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className="md:hidden relative w-9 h-9 flex flex-col justify-center items-center rounded-lg border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white hover:bg-zinc-100 dark:hover:bg-zinc-800/50 transition-colors"
+                        className="md:hidden relative w-8 h-8 flex flex-col justify-center items-center rounded-full border border-zinc-200 dark:border-zinc-800 text-zinc-900 dark:text-white bg-zinc-100/60 dark:bg-zinc-900/60 transition-colors"
                         aria-label="Toggle menu"
                     >
-                        <div className="w-5 h-4 relative flex flex-col justify-between items-center">
-                            <span className={`w-5 h-0.5 bg-current rounded-full transition-all duration-300 origin-center ${isOpen ? "rotate-45 translate-y-[7px]" : ""}`} />
-                            <span className={`w-5 h-0.5 bg-current rounded-full transition-all duration-300 ${isOpen ? "opacity-0" : "opacity-100"}`} />
-                            <span className={`w-5 h-0.5 bg-current rounded-full transition-all duration-300 origin-center ${isOpen ? "-rotate-45 -translate-y-[7px]" : ""}`} />
+                        <div className="w-4 h-3.5 relative flex flex-col justify-between items-center">
+                            <span className={`w-4 h-0.5 bg-current rounded-full transition-all duration-300 origin-center ${isOpen ? "rotate-45 translate-y-[6px]" : ""}`} />
+                            <span className={`w-4 h-0.5 bg-current rounded-full transition-all duration-300 ${isOpen ? "opacity-0" : "opacity-100"}`} />
+                            <span className={`w-4 h-0.5 bg-current rounded-full transition-all duration-300 origin-center ${isOpen ? "-rotate-45 -translate-y-[6px]" : ""}`} />
                         </div>
                     </button>
                 </div>
@@ -172,30 +176,34 @@ export default function HeaderLayout() {
 
             {/* Mobile Drawer Menu */}
             <div
-                className={`absolute top-full left-0 right-0 w-full h-[calc(100dvh-100%)] min-h-[calc(100dvh-100%)] bg-white/98 dark:bg-zinc-950/98 backdrop-blur-xl border-t border-zinc-200/50 dark:border-zinc-800/50 z-40 md:hidden flex flex-col justify-between p-8 overflow-y-auto transition-all duration-300 ${
-                    isOpen ? "opacity-100 pointer-events-auto translate-y-0" : "opacity-0 pointer-events-none -translate-y-2"
+                className={`fixed inset-x-4 top-20 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-2xl border border-zinc-200/90 dark:border-zinc-800/90 rounded-3xl z-40 md:hidden flex flex-col justify-between p-6 shadow-2xl overflow-y-auto transition-all duration-300 ${
+                    isOpen ? "opacity-100 pointer-events-auto translate-y-0" : "opacity-0 pointer-events-none -translate-y-4"
                 }`}
+                style={{ maxHeight: "calc(100dvh - 100px)" }}
             >
-                <nav className="flex flex-col gap-6 font-sans text-xl font-bold tracking-wider text-zinc-900 dark:text-white uppercase">
+                <nav className="flex flex-col gap-4 font-sans text-lg font-extrabold tracking-wider text-zinc-900 dark:text-white uppercase">
                     {headerItem.map((item) => (
                         <Link
                             key={item.name}
                             href={item.path}
                             onClick={() => setIsOpen(false)}
-                            className="py-2 border-b border-zinc-200 dark:border-zinc-800 hover:text-amber-500 dark:hover:text-amber-400 transition-colors"
+                            className="py-2.5 px-4 rounded-xl hover:bg-zinc-100 dark:hover:bg-zinc-900 hover:text-amber-600 dark:hover:text-amber-400 transition-colors flex items-center justify-between"
                         >
-                            {t(item.name)}
+                            <span>{t(item.name)}</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 text-zinc-400">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                            </svg>
                         </Link>
                     ))}
                 </nav>
 
-                <div className="flex flex-col gap-3 mt-8">
+                <div className="flex flex-col gap-3 mt-6 pt-4 border-t border-zinc-200/80 dark:border-zinc-800/80">
                     {/* Theme Switcher Mobile */}
                     <button
                         onClick={toggleTheme}
-                        className="py-3.5 px-5 rounded-2xl border border-zinc-300 dark:border-zinc-700 bg-zinc-100/80 dark:bg-white/5 active:bg-zinc-200 dark:active:bg-white/10 text-zinc-900 dark:text-white text-xs font-sans font-bold uppercase tracking-wider flex justify-between items-center transition-colors"
+                        className="py-3 px-4 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100/70 dark:bg-zinc-900/70 text-zinc-900 dark:text-white text-xs font-sans font-bold uppercase tracking-wider flex justify-between items-center transition-colors"
                     >
-                        <span className="text-zinc-600 dark:text-zinc-300">{t("theme")}</span>
+                        <span className="text-zinc-600 dark:text-zinc-400">{t("theme")}</span>
                         <span className="text-amber-600 dark:text-amber-400 font-extrabold flex items-center gap-2">
                             {isDarkMode ? (
                                 <>
@@ -218,16 +226,16 @@ export default function HeaderLayout() {
                     {/* Language Switcher Mobile */}
                     <button
                         onClick={toggleLanguage}
-                        className="py-3.5 px-5 rounded-2xl border border-zinc-300 dark:border-zinc-700 bg-zinc-100/80 dark:bg-white/5 active:bg-zinc-200 dark:active:bg-white/10 text-zinc-900 dark:text-white text-xs font-sans font-bold uppercase tracking-wider flex justify-between items-center transition-colors"
+                        className="py-3 px-4 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100/70 dark:bg-zinc-900/70 text-zinc-900 dark:text-white text-xs font-sans font-bold uppercase tracking-wider flex justify-between items-center transition-colors"
                     >
-                        <span className="text-zinc-600 dark:text-zinc-300">{t("language")}</span>
+                        <span className="text-zinc-600 dark:text-zinc-400">{t("language")}</span>
                         <span className="text-amber-600 dark:text-amber-400 font-extrabold">{locale === "vi" ? "Tiếng Việt (VI)" : "English (EN)"}</span>
                     </button>
 
                     <Link
                         href="/booking"
                         onClick={() => setIsOpen(false)}
-                        className="w-full py-4 rounded-full bg-zinc-950 hover:bg-zinc-800 dark:bg-white dark:hover:bg-zinc-100 text-white dark:text-zinc-950 text-center font-sans font-bold text-sm tracking-wider uppercase transition-colors"
+                        className="w-full py-3.5 rounded-full bg-amber-500 hover:bg-amber-400 text-zinc-950 text-center font-sans font-extrabold text-xs tracking-wider uppercase transition-colors shadow-lg shadow-amber-500/20 mt-1"
                     >
                         {t("cta")}
                     </Link>
