@@ -52,6 +52,7 @@ export default function HeaderLayout() {
         { name: "home", path: "/" },
         { name: "about", path: "/about" },
         { name: "services", path: "/services" },
+        { name: "products", path: "/products" },
         { name: "contact", path: "/contact" },
     ];
 

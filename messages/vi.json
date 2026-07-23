@@ -1,10 +1,11 @@
 {
   "Header": {
-    "home": "Trang chủ",
-    "about": "Giới thiệu",
-    "services": "Dịch vụ",
-    "contact": "Liên hệ",
-    "cta": "Đặt lịch ngay",
+    "home": "TRANG CHỦ",
+    "about": "GIỚI THIỆU",
+    "services": "DỊCH VỤ",
+    "products": "SẢN PHẨM",
+    "contact": "LIÊN HỆ",
+    "cta": "ĐẶT LỊCH NGAY",
     "language": "Ngôn ngữ",
     "theme": "Giao diện",
     "themeLight": "Sáng",
@@ -240,5 +241,24 @@
     "style4Name": "Slick Back Drop Fade",
     "style4Desc": "Tóc chải ngược lôi cuốn phối hợp kỹ thuật Drop Fade ôm sát đường gáy.",
     "style4Tag": "Slick Premium"
+  },
+  "Products": {
+    "tagline": "T99 GROOMING ESSENTIALS",
+    "title": "SẢN PHẢM TẠO KIỂU & CHĂM SÓC",
+    "subtitle": "Khám phá bộ sưu tập sản phẩm sáp vuốt tóc, xịt dưỡng và tinh dầu độc quyền từ T99 Barbershop, mang lại vẻ đẹp phong độ mỗi ngày.",
+    "viewAll": "XEM TẤT CẢ SẢN PHẨM",
+    "buyBtn": "MUA NGAY",
+    "addToCart": "THÊM VÀO GIỎ",
+    "inStock": "Còn hàng",
+    "outOfStock": "Hết hàng",
+    "item1Title": "T99 MATTE CLAY POMADE",
+    "item1Desc": "Sáp đất sét tạo kiểu giữ nếp cực cao (Strong Hold), hoàn thiện mờ tự nhiên (Matte Finish) không gây bết dính.",
+    "item1Price": "320.000đ",
+    "item2Title": "T99 GROOMING TONIC SPRAY",
+    "item2Desc": "Xịt dưỡng tạo phồng tóc (Pre-styling Spray) bảo vệ tóc khỏi nhiệt và tăng phồng tối đa cho mọi kiểu tóc.",
+    "item2Price": "280.000đ",
+    "item3Title": "T99 NATURAL BEARD & HAIR OIL",
+    "item3Desc": "Tinh dầu dưỡng tóc & râu tự nhiên chiết xuất Argan & Jojoba, nuôi dưỡng tóc chắc khỏe và thơm dịu lịch lãm.",
+    "item3Price": "350.000đ"
   }
 }

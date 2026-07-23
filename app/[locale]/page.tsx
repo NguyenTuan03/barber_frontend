@@ -7,6 +7,7 @@ import FloatingInfoBlock from "@/components/home/FloatingInfoBlock";
 import AboutService from "@/components/home/AboutService";
 import BrowserService from "@/components/home/BrowseService";
 import TrendingStylesSection from "@/components/home/TrendingStylesSection";
+import ProductsSection from "@/components/home/ProductsSection";
 import BarberTeamSection from "@/components/home/BarberTeamSection";
 import PromotionBanner from "@/components/home/PromoBanner";
 import ReviewsSection from "@/components/home/ReviewsSection";
@@ -50,6 +51,7 @@ export default async function HomePage({
     tAbout,
     tServices,
     tStyles,
+    tProducts,
     tTeam,
     tPromo,
     tWhyChoose,
@@ -72,6 +74,7 @@ export default async function HomePage({
     getTranslations("HomeAboutService"),
     getTranslations("HomeServices"),
     getTranslations("TrendingStyles"),
+    getTranslations("Products"),
     getTranslations("BarberTeam"),
     getTranslations("HomePromo"),
     getTranslations("WhyChoose"),
@@ -126,6 +129,9 @@ export default async function HomePage({
 
       {/* Trending Hairstyles Section */}
       <TrendingStylesSection tStyles={tStyles} />
+
+      {/* Grooming Products Showcase Section */}
+      <ProductsSection tProducts={tProducts} />
 
       {/* Barber Team Section */}
       <BarberTeamSection tTeam={tTeam} />

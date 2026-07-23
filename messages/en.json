@@ -3,6 +3,7 @@
     "home": "Home",
     "about": "About Us",
     "services": "Services",
+    "products": "Products",
     "contact": "Contact",
     "cta": "Book Now",
     "language": "Language",
@@ -240,5 +241,24 @@
     "style4Name": "Slick Back Drop Fade",
     "style4Desc": "Sophisticated slicked back hair paired with a seamless drop fade contours.",
     "style4Tag": "Slick Premium"
+  },
+  "Products": {
+    "tagline": "T99 GROOMING ESSENTIALS",
+    "title": "STYLING & GROOMING ESSENTIALS",
+    "subtitle": "Discover our signature line of hair pomades, grooming sprays, and natural nourishing oils crafted by T99 Barbershop.",
+    "viewAll": "VIEW ALL PRODUCTS",
+    "buyBtn": "BUY NOW",
+    "addToCart": "ADD TO CART",
+    "inStock": "In Stock",
+    "outOfStock": "Out of Stock",
+    "item1Title": "T99 MATTE CLAY POMADE",
+    "item1Desc": "Strong hold matte finish styling clay designed for a natural, non-greasy texture and all-day control.",
+    "item1Price": "$14.00",
+    "item2Title": "T99 GROOMING TONIC SPRAY",
+    "item2Desc": "Pre-styling spray offering heat protection, weightless volume, and scalp revitalization.",
+    "item2Price": "$12.00",
+    "item3Title": "T99 NATURAL BEARD & HAIR OIL",
+    "item3Desc": "Nourishing beard and hair oil infused with Argan and Jojoba oils for a soft touch and subtle masculine scent.",
+    "item3Price": "$15.00"
   }
 }
