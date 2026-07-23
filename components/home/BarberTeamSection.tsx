@@ -45,7 +45,7 @@ export default function BarberTeamSection({
     ];
 
     return (
-        <section className="w-full bg-zinc-900 text-white dark:bg-[#121110] py-20 md:py-28 px-6 md:px-8 border-t border-amber-500/20 transition-colors duration-300 relative overflow-hidden">
+        <section className="w-full bg-[#FAF9F5] text-zinc-900 dark:bg-[#121110] dark:text-white py-20 md:py-28 px-6 md:px-8 border-t border-zinc-200/80 dark:border-amber-500/20 transition-colors duration-300 relative overflow-hidden">
             {/* Background subtle light ambient glow */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/5 blur-[120px] rounded-full pointer-events-none" />
 
@@ -54,7 +54,7 @@ export default function BarberTeamSection({
                 <ScrollReveal direction="up" delay={0.1}>
                     <div className="flex items-center gap-3 mb-3 justify-center">
                         <span className="h-px w-8 bg-amber-500/60" />
-                        <span className="text-xs font-sans font-bold tracking-[0.22em] text-amber-400 uppercase">
+                        <span className="text-xs font-sans font-bold tracking-[0.22em] text-amber-600 dark:text-amber-400 uppercase">
                             {tTeam("tagline")}
                         </span>
                         <span className="h-px w-8 bg-amber-500/60" />
@@ -62,13 +62,13 @@ export default function BarberTeamSection({
                 </ScrollReveal>
 
                 <ScrollReveal direction="up" delay={0.15}>
-                    <h2 className="text-white font-serif font-black text-3xl md:text-5xl tracking-tight leading-tight uppercase mb-4 text-center">
+                    <h2 className="text-zinc-950 dark:text-white font-serif font-black text-3xl md:text-5xl tracking-tight leading-tight uppercase mb-4 text-center">
                         {tTeam("title")}
                     </h2>
                 </ScrollReveal>
 
                 <ScrollReveal direction="up" delay={0.2}>
-                    <p className="text-zinc-300 dark:text-zinc-400 text-xs md:text-sm font-sans font-normal leading-relaxed max-w-[65ch] text-center mb-16">
+                    <p className="text-zinc-600 dark:text-zinc-400 text-xs md:text-sm font-sans font-normal leading-relaxed max-w-[65ch] text-center mb-16">
                         {tTeam("subtitle")}
                     </p>
                 </ScrollReveal>
@@ -77,7 +77,7 @@ export default function BarberTeamSection({
                 <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
                     {barbers.map((barber, index) => (
                         <ScrollReveal key={barber.id} direction="up" delay={0.1 + index * 0.1} className="h-full">
-                            <div className="group h-full bg-zinc-800/60 dark:bg-zinc-900/60 border border-zinc-700/60 dark:border-zinc-800 hover:border-amber-500/50 rounded-2xl p-4 flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:shadow-amber-500/10 backdrop-blur-sm">
+                            <div className="group h-full bg-white dark:bg-zinc-900/60 border border-zinc-200/80 dark:border-zinc-800 hover:border-amber-500/50 rounded-2xl p-4 flex flex-col justify-between transition-all duration-500 shadow-sm hover:shadow-xl hover:shadow-amber-500/10">
                                 {/* Image Container */}
                                 <div>
                                     <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden mb-5 bg-zinc-950">
@@ -93,15 +93,15 @@ export default function BarberTeamSection({
                                             {barber.experience}
                                         </div>
                                         {/* Gradient Overlay */}
-                                        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity" />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/80 via-transparent to-transparent opacity-70 group-hover:opacity-40 transition-opacity" />
                                     </div>
 
                                     {/* Info */}
                                     <div className="px-2">
-                                        <span className="text-[11px] font-sans font-bold tracking-widest text-amber-400/90 uppercase mb-1 block">
+                                        <span className="text-[11px] font-sans font-bold tracking-widest text-amber-600 dark:text-amber-400/90 uppercase mb-1 block">
                                             {barber.role}
                                         </span>
-                                        <h3 className="text-xl font-sans font-extrabold text-white group-hover:text-amber-400 transition-colors uppercase tracking-tight mb-3">
+                                        <h3 className="text-xl font-sans font-extrabold text-zinc-950 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors uppercase tracking-tight mb-3">
                                             {barber.name}
                                         </h3>
 
@@ -110,7 +110,7 @@ export default function BarberTeamSection({
                                             {barber.specialties.map((spec) => (
                                                 <span
                                                     key={spec}
-                                                    className="px-2.5 py-1 rounded-md bg-zinc-700/60 dark:bg-zinc-800/80 border border-zinc-600/50 dark:border-zinc-700/50 text-[10px] font-sans font-medium text-zinc-200 dark:text-zinc-300 uppercase tracking-wider"
+                                                    className="px-2.5 py-1 rounded-md bg-zinc-100 dark:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-700/50 text-[10px] font-sans font-medium text-zinc-700 dark:text-zinc-300 uppercase tracking-wider"
                                                 >
                                                     {spec}
                                                 </span>
