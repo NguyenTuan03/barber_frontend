@@ -3,6 +3,7 @@
     "home": "Home",
     "about": "About Us",
     "services": "Services",
+    "products": "Products",
     "contact": "Contact",
     "cta": "Book Now",
     "language": "Language",
@@ -29,8 +30,12 @@
     "addressLabel": "Address:",
     "addressVal": "33/1 Quốc Hương, P. An Khánh, TP. HCM",
     "phoneLabel": "Phone:",
+    "hoursTitle": "WORKING HOURS",
     "hoursLabel": "Hours:",
     "hoursVal": "9:00 AM - 9:00 PM (Daily)",
+    "hoursMon": "Monday: 9:00am – 5:00pm",
+    "hoursTueSun": "Tue – Sun: 9:00am – 8:00pm",
+    "followUsTitle": "FOLLOW US",
     "rights": "© 2026 T99 Barber Shop. All rights reserved."
   },
   "Banner": {
@@ -56,6 +61,32 @@
     "stat2Suffix": "+",
     "stat2Label": "YEARS OF EXPERIENCE"
   },
+  "HomeAboutService": {
+    "description": "T99 delivers salon-grade haircutting and styling experiences in an elegant, sophisticated atmosphere. Our seasoned barbers pay obsessive attention to every detail.",
+    "stat1Label": "Great Services!",
+    "stat2Label": "Satisfied Client Reviews"
+  },
+  "HomeServices": {
+    "tagline": "T99 BARBER SHOP - FROM HEART TO HAIR!",
+    "title": "SERVICES & PRODUCTS",
+    "subtitle": "At T99 Barbershop you will experience top-notch services in a professional, friendly, and welcoming atmosphere!",
+    "detailPriceTitle": "DETAILED SERVICE PRICE LIST",
+    "card1Title": "HAIRCUT & CHEMICAL SERVICES",
+    "card1Desc": "T99 provides a full range of haircutting: Wash & Cut, Senior Cut, Master Cut, and Chemical Treatments: Perm, Straightening, Dyeing...",
+    "card2Title": "HAIR WASH & RELAXATION",
+    "card2Desc": "Experience a calm and soothing ambiance for ultimate relaxation.",
+    "card3Title": "GROOMING PRODUCTS",
+    "card3Desc": "T99 offers authentic, high-quality hair care and styling products for all hair types.",
+    "bookBtn": "BOOK NOW",
+    "haircutTitle": "GENTLEMEN'S HAIRCUT",
+    "haircutDesc": "Professional styling cut, hair wash & head massage.",
+    "shaveTitle": "HOT TOWEL SHAVE",
+    "shaveDesc": "Clean straight razor shave with relaxing hot towel treatment.",
+    "comboTitle": "FULL GROOMING COMBO",
+    "comboDesc": "Comprehensive package for haircut, beard trim & facial care.",
+    "kidTitle": "KIDS HAIRCUT",
+    "kidDesc": "Gentle, fun and friendly haircut for young boys."
+  },
   "Services": {
     "title": "BROWSE OUR SERVICES",
     "subtitle": "We offer a full range of professional in-home grooming services, tailored specifically for your style and convenience.",
@@ -73,9 +104,29 @@
     "beardGroomingDesc": "Comprehensive washing, conditioning and styling with premium beard oils.",
     "bookBtn": "BOOK AN APPOINTMENT"
   },
+  "HomeContactInfo": {
+    "appointmentTitle": "BOOK AN APPOINTMENT!",
+    "formSectionTitle": "SEND US A MESSAGE",
+    "description": "Leave your contact info and details, and we will get back to you immediately to confirm your appointment.",
+    "phoneVal": "(475) 453 - 3465",
+    "emailVal": "hello@example.com",
+    "formName": "FULL NAME",
+    "formSubject": "SUBJECT",
+    "formPhone": "PHONE NUMBER",
+    "formEmail": "EMAIL ADDRESS",
+    "formMessage": "PLEASE TYPE YOUR MESSAGE HERE...",
+    "formBtn": "BOOK AN APPOINTMENT"
+  },
   "Promo": {
     "title": "EXPERIENCE THE LUXURY OF CONCIERGE BARBER SERVICES AT YOUR HOME",
     "bookBtn": "BOOK AN APPOINTMENT"
+  },
+  "HomePromo": {
+    "title": "EXPERIENCE PROFESSIONAL GROOMING SERVICES AT T99 BARBER SHOP",
+    "bookBtn": "BOOK AN APPOINTMENT"
+  },
+  "HomeWhyChooseUs": {
+    "title": "WHY CHOOSE US"
   },
   "WhyChoose": {
     "title": "WHY CHOOSE US",
@@ -95,6 +146,8 @@
     "quoteAuthor": "SAM HOUSTON"
   },
   "Contact": {
+    "appointmentTitle": "BOOK AN APPOINTMENT!",
+    "formSectionTitle": "SEND US A MESSAGE",
     "title": "MAKE AN APPOINTMENT",
     "description": "Leave your contact info and details, and we will get back to you immediately to confirm your appointment.",
     "phoneLabel": "GIVE US A CALL",
@@ -155,5 +208,58 @@
     "detailsServices": "Services",
     "detailsBookOther": "Book Another",
     "detailsMinutes": "{minutes} mins - {barber}"
+  },
+  "BarberTeam": {
+    "tagline": "EXPERT TEAM",
+    "title": "MEET OUR MASTER BARBERS",
+    "subtitle": "Our team of highly skilled, passionate artisans dedicated to precision grooming and timeless style for every gentleman.",
+    "experience": "{years} years exp",
+    "barber1Name": "Arthur Pendelton",
+    "barber1Role": "Master Barber & Founder",
+    "barber1Exp": "12",
+    "barber2Name": "Marcus Vance",
+    "barber2Role": "Senior Fade Specialist",
+    "barber2Exp": "8",
+    "barber3Name": "David Miller",
+    "barber3Role": "Beard & Grooming Master",
+    "barber3Exp": "10",
+    "bookWithBarber": "Book with {name}"
+  },
+  "TrendingStyles": {
+    "tagline": "LOOKBOOK & TRENDING",
+    "title": "TRENDING HAIRSTYLES GALLERY",
+    "subtitle": "Explore top gentleman hairstyle trends meticulously crafted by T99 master barbers.",
+    "style1Name": "Textured Crop Fade",
+    "style1Desc": "Modern short haircut with natural layered crop top and sharp skin fade finish.",
+    "style1Tag": "Hot Trend 2026",
+    "style2Name": "Classic Side Part",
+    "style2Desc": "Timeless gentleman side part with elegant volume and refined shine.",
+    "style2Tag": "Gentleman Classic",
+    "style3Name": "High Skin Fade Quiff",
+    "style3Desc": "Dynamic quiff top with bold high skin fade for a confident style.",
+    "style3Tag": "Modern Quiff",
+    "style4Name": "Slick Back Drop Fade",
+    "style4Desc": "Sophisticated slicked back hair paired with a seamless drop fade contours.",
+    "style4Tag": "Slick Premium",
+    "bookThisStyle": "BOOK THIS STYLE"
+  },
+  "Products": {
+    "tagline": "T99 GROOMING ESSENTIALS",
+    "title": "STYLING & GROOMING ESSENTIALS",
+    "subtitle": "Discover our signature line of hair pomades, grooming sprays, and natural nourishing oils crafted by T99 Barbershop.",
+    "viewAll": "VIEW ALL PRODUCTS",
+    "buyBtn": "BUY NOW",
+    "addToCart": "ADD TO CART",
+    "inStock": "In Stock",
+    "outOfStock": "Out of Stock",
+    "item1Title": "T99 MATTE CLAY POMADE",
+    "item1Desc": "Strong hold matte finish styling clay designed for a natural, non-greasy texture and all-day control.",
+    "item1Price": "$14.00",
+    "item2Title": "T99 GROOMING TONIC SPRAY",
+    "item2Desc": "Pre-styling spray offering heat protection, weightless volume, and scalp revitalization.",
+    "item2Price": "$12.00",
+    "item3Title": "T99 NATURAL BEARD & HAIR OIL",
+    "item3Desc": "Nourishing beard and hair oil infused with Argan and Jojoba oils for a soft touch and subtle masculine scent.",
+    "item3Price": "$15.00"
   }
 }

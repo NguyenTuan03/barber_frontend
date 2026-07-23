@@ -1,10 +1,11 @@
 {
   "Header": {
-    "home": "Trang chủ",
-    "about": "Giới thiệu",
-    "services": "Dịch vụ",
-    "contact": "Liên hệ",
-    "cta": "Đặt lịch ngay",
+    "home": "TRANG CHỦ",
+    "about": "GIỚI THIỆU",
+    "services": "DỊCH VỤ",
+    "products": "SẢN PHẨM",
+    "contact": "LIÊN HỆ",
+    "cta": "ĐẶT LỊCH NGAY",
     "language": "Ngôn ngữ",
     "theme": "Giao diện",
     "themeLight": "Sáng",
@@ -29,8 +30,12 @@
     "addressLabel": "Địa chỉ:",
     "addressVal": "33/1 Quốc Hương, P. An Khánh, TP. HCM",
     "phoneLabel": "Điện thoại:",
+    "hoursTitle": "GIỜ LÀM VIỆC",
     "hoursLabel": "Giờ mở cửa:",
     "hoursVal": "9:00 - 21:00 (Hàng ngày)",
+    "hoursMon": "Thứ 2: 9:00am – 5:00pm",
+    "hoursTueSun": "Thứ 3 – CN: 9:00am – 8:00pm",
+    "followUsTitle": "FOLLOW US",
     "rights": "© 2026 T99 Barber Shop. Bảo lưu mọi quyền."
   },
   "Banner": {
@@ -56,6 +61,32 @@
     "stat2Suffix": "+",
     "stat2Label": "NĂM KINH NGHIỆM"
   },
+  "HomeAboutService": {
+    "description": "T99 mang đến trải nghiệm cắt tóc chuyên nghiệp chuẩn salon trong không gian sang trọng, tinh tế. Đội ngũ thợ giàu kinh nghiệm luôn chú trọng tỉ mỉ từng chi tiết.",
+    "stat1Label": "Dịch vụ tuyệt vời!",
+    "stat2Label": "Khách hàng đánh giá hài lòng"
+  },
+  "HomeServices": {
+    "tagline": "T99 BARBER SHOP - FROM HEART TO HAIR!",
+    "title": "DỊCH VỤ - SẢN PHẨM",
+    "subtitle": "Với T99 Barbershop bạn sẽ được trải nghiệm những dịch vụ tốt nhất trong một không gian chuyên nghiệp, thân thiện & gần gũi!",
+    "detailPriceTitle": "BẢNG GIÁ DỊCH VỤ CHI TIẾT",
+    "card1Title": "CẮT - LÀM HÓA CHẤT",
+    "card1Desc": "T99 cung cấp đa dạng dịch vụ cắt: Cắt Xả, Senior Cắt, Master Cắt và làm hóa chất: Uốn, Ép, Nhuộm,...",
+    "card2Title": "GỘI ĐẦU - RELAX",
+    "card2Desc": "Trải nghiệm một không gian yên tĩnh và nhẹ nhàng giúp bạn có những phút giây thư giãn và thoải mái.",
+    "card3Title": "SẢN PHẨM CHĂM SÓC",
+    "card3Desc": "T99 cung cấp những sản phẩm chăm sóc & tạo kiểu tóc chính hãng, chất lượng đáp ứng đa dạng cho các kiểu tóc.",
+    "bookBtn": "ĐẶT LỊCH NGAY",
+    "haircutTitle": "CẮT TÓC NAM CHUYÊN NGHIỆP",
+    "haircutDesc": "Cắt gội massage tạo kiểu chuẩn salon cao cấp.",
+    "shaveTitle": "CẠO RÂU KHĂN NÓNG",
+    "shaveDesc": "Cạo râu sạch sẽ kết hợp chườm khăn nóng thư giãn.",
+    "comboTitle": "COMBO CHĂM SÓC TOÀN DIỆN",
+    "comboDesc": "Gói cắt tóc, tỉa râu và dưỡng da mặt toàn diện.",
+    "kidTitle": "CẮT TÓC TRẺ EM",
+    "kidDesc": "Cắt tóc vui vẻ, êm ái dành riêng cho bé trai."
+  },
   "Services": {
     "title": "DANH SÁCH DỊCH VỤ CỦA CHÚNG TÔI",
     "subtitle": "Chúng tôi cung cấp đầy đủ các dịch vụ chăm sóc tóc và râu chuyên nghiệp tại nhà, được thực hiện bởi những thợ lành nghề nhất.",
@@ -73,9 +104,29 @@
     "beardGroomingDesc": "Gội, dưỡng ẩm và tạo kiểu râu chuyên sâu bằng tinh dầu cao cấp.",
     "bookBtn": "ĐẶT LỊCH HẸN NGAY"
   },
+  "HomeContactInfo": {
+    "appointmentTitle": "BOOK LỊCH HẸN!",
+    "formSectionTitle": "GỬI THÔNG TIN LIÊN HỆ",
+    "description": "Để lại thông tin liên hệ và yêu cầu của bạn, chúng tôi sẽ liên hệ lại ngay lập tức để xác nhận lịch hẹn của bạn.",
+    "phoneVal": "(475) 453 - 3465",
+    "emailVal": "hello@example.com",
+    "formName": "HỌ VÀ TÊN",
+    "formSubject": "TIÊU ĐỀ HẸN",
+    "formPhone": "SỐ ĐIỆN THOẠI",
+    "formEmail": "ĐỊA CHỈ EMAIL",
+    "formMessage": "VUI LÒNG NHẬP NỘI DUNG TẠI ĐÂY...",
+    "formBtn": "ĐẶT LỊCH HẸN NGAY"
+  },
   "Promo": {
     "title": "TRẠI NGHIỆM SỰ SANG TRỌNG CỦA DỊCH VỤ CẮT TÓC RIÊNG NGAY TẠI NHÀ BẠN",
     "bookBtn": "ĐẶT LỊCH HẸN NGAY"
+  },
+  "HomePromo": {
+    "title": "TRẢI NGHIỆM DỊCH VỤ CẮT TÓC CHUYÊN NGHIỆP TẠI T99 BARBER SHOP",
+    "bookBtn": "ĐẶT LỊCH HẸN NGAY"
+  },
+  "HomeWhyChooseUs": {
+    "title": "TẠI SAO CHỌN CHÚNG TÔI"
   },
   "WhyChoose": {
     "title": "TẠI SAO CHỌN CHÚNG TÔI",
@@ -95,6 +146,8 @@
     "quoteAuthor": "SAM HOUSTON"
   },
   "Contact": {
+    "appointmentTitle": "BOOK LỊCH HẸN!",
+    "formSectionTitle": "GỬI THÔNG TIN LIÊN HỆ",
     "title": "ĐẶT LỊCH HẸN",
     "description": "Để lại thông tin liên hệ và yêu cầu của bạn, chúng tôi sẽ liên hệ lại ngay lập tức để xác nhận lịch hẹn của bạn.",
     "phoneLabel": "GỌI CHO CHÚNG TÔI",
@@ -155,5 +208,58 @@
     "detailsServices": "Dịch vụ",
     "detailsBookOther": "Đặt lịch khác",
     "detailsMinutes": "{minutes} phút - {barber}"
+  },
+  "BarberTeam": {
+    "tagline": "ĐỘI NGŨ CHUYÊN GIA",
+    "title": "NGHỆ NHÂN TẠO KIỂU T99",
+    "subtitle": "Đội ngũ thợ cắt tóc tay nghề cao, giàu kinh nghiệm và đầy tâm huyết sẵn sàng mang đến diện mạo hoàn hảo nhất cho quý khách.",
+    "experience": "{years} năm kinh nghiệm",
+    "barber1Name": "Arthur Pendelton",
+    "barber1Role": "Master Barber & Founder",
+    "barber1Exp": "12",
+    "barber2Name": "Marcus Vance",
+    "barber2Role": "Senior Fade Specialist",
+    "barber2Exp": "8",
+    "barber3Name": "David Miller",
+    "barber3Role": "Beard & Grooming Master",
+    "barber3Exp": "10",
+    "bookWithBarber": "Đặt lịch với {name}"
+  },
+  "TrendingStyles": {
+    "tagline": "LOOKBOOK & TRENDING",
+    "title": "BỘ SƯU TẬP MẪU TÓC THỜI THƯỢNG",
+    "subtitle": "Khám phá những phong cách tóc nam dẫn đầu xu hướng, được chế tác tỉ mỉ bởi nghệ nhân T99 Barber Shop.",
+    "style1Name": "Textured Crop Fade",
+    "style1Desc": "Tóc ngắn hiện đại với phần mái tỉa layer tự nhiên kết hợp kỹ thuật cạo sát mượt mà.",
+    "style1Tag": "Hot Trend 2026",
+    "style2Name": "Classic Side Part",
+    "style2Desc": "Phong cách quý ông cổ điển rẽ ngôi thanh lịch, tạo phom phồng chải chuốt sang trọng.",
+    "style2Tag": "Gentleman Classic",
+    "style3Name": "High Skin Fade Quiff",
+    "style3Desc": "Tóc vuốt Quiff đỉnh đầu tạo độ phồng cao phối hợp cạo sát hai bên đầy nam tính.",
+    "style3Tag": "Modern Quiff",
+    "style4Name": "Slick Back Drop Fade",
+    "style4Desc": "Tóc chải ngược lôi cuốn phối hợp kỹ thuật Drop Fade ôm sát đường gáy.",
+    "style4Tag": "Slick Premium",
+    "bookThisStyle": "ĐẶT LỊCH KIỂU NÀY"
+  },
+  "Products": {
+    "tagline": "T99 GROOMING ESSENTIALS",
+    "title": "SẢN PHẢM TẠO KIỂU & CHĂM SÓC",
+    "subtitle": "Khám phá bộ sưu tập sản phẩm sáp vuốt tóc, xịt dưỡng và tinh dầu độc quyền từ T99 Barbershop, mang lại vẻ đẹp phong độ mỗi ngày.",
+    "viewAll": "XEM TẤT CẢ SẢN PHẨM",
+    "buyBtn": "MUA NGAY",
+    "addToCart": "THÊM VÀO GIỎ",
+    "inStock": "Còn hàng",
+    "outOfStock": "Hết hàng",
+    "item1Title": "T99 MATTE CLAY POMADE",
+    "item1Desc": "Sáp đất sét tạo kiểu giữ nếp cực cao (Strong Hold), hoàn thiện mờ tự nhiên (Matte Finish) không gây bết dính.",
+    "item1Price": "320.000đ",
+    "item2Title": "T99 GROOMING TONIC SPRAY",
+    "item2Desc": "Xịt dưỡng tạo phồng tóc (Pre-styling Spray) bảo vệ tóc khỏi nhiệt và tăng phồng tối đa cho mọi kiểu tóc.",
+    "item2Price": "280.000đ",
+    "item3Title": "T99 NATURAL BEARD & HAIR OIL",
+    "item3Desc": "Tinh dầu dưỡng tóc & râu tự nhiên chiết xuất Argan & Jojoba, nuôi dưỡng tóc chắc khỏe và thơm dịu lịch lãm.",
+    "item3Price": "350.000đ"
   }
 }

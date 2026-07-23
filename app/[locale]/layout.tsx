@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
 import "../globals.css";
 import HeaderLayout from "@/components/layouts/Header";
 import FooterLayout from "@/components/layouts/Footer";
@@ -11,14 +11,16 @@ import { routing } from "@/i18n/routing";
 import { ThemeProvider } from "@wrksz/themes/next";
 import QueryProvider from "@/components/providers/query-provider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: "--font-sans",
+  subsets: ["latin", "vietnamese"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const playfair = Playfair_Display({
+  variable: "--font-serif",
+  subsets: ["latin", "vietnamese"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -61,15 +63,15 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${plusJakarta.variable} ${playfair.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col bg-[#FAFAFA] text-zinc-900 font-sans tracking-normal selection:bg-amber-500/30 selection:text-amber-900">
         <NextIntlClientProvider messages={messages}>
           <QueryProvider>
             <ThemeProvider
               attribute="class"
-              defaultTheme="dark"
+              defaultTheme="light"
               enableSystem={false}
             >
               <HeaderLayout />

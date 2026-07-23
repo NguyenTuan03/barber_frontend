@@ -1,6 +1,4 @@
 import { getTranslations } from "next-intl/server";
-import { Link } from "@/i18n/routing";
-import Image from "next/image";
 import getServiceApi from "@/services/service/getServiceApi";
 import getSiteSettingApi from "@/services/siteSettings/getSiteSettingsApi";
 import { SiteSettingKeyEnum } from "@/enum/AppEnum";
@@ -8,171 +6,95 @@ import HeroBanner from "@/components/home/HeroBanner";
 import FloatingInfoBlock from "@/components/home/FloatingInfoBlock";
 import AboutService from "@/components/home/AboutService";
 import BrowserService from "@/components/home/BrowseService";
+import TrendingStylesSection from "@/components/home/TrendingStylesSection";
+import ProductsSection from "@/components/home/ProductsSection";
+import BarberTeamSection from "@/components/home/BarberTeamSection";
 import PromotionBanner from "@/components/home/PromoBanner";
 import ReviewsSection from "@/components/home/ReviewsSection";
 import Contact from "@/components/home/Contact";
 import GoogleMap from "@/components/home/GoogleMap";
+import ScrollReveal from "@/components/common/ScrollReveal";
 
-export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+// Hoisted static values (Prevents rebuilding on every render)
+const serviceIcons = [
+  <svg key="1" className="w-6 h-6 text-zinc-950 dark:text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M14.25 9.75L16.5 12l-2.25 2.25m-4.5 0L7.5 12l2.25-2.25M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" />
+  </svg>,
+  <svg key="2" className="w-6 h-6 text-zinc-950 dark:text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M7.864 4.243A7.5 7.5 0 0119.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 004.5 10.5a7.464 7.464 0 001.17 4.02m1.637 2.973A17.935 17.935 0 0112 19.5c1.458 0 2.873-.173 4.234-.502m0 0l-3.3-3.3m3.3 3.3l-3.3 3.3" />
+  </svg>,
+  <svg key="3" className="w-6 h-6 text-zinc-950 dark:text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456z" />
+  </svg>,
+  <svg key="4" className="w-6 h-6 text-zinc-950 dark:text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+  </svg>
+];
+
+const defaultServicesList = [
+  { id: "haircut", price: "100.000đ", icon: serviceIcons[0] },
+  { id: "shave", price: "50.000đ", icon: serviceIcons[1] },
+  { id: "combo", price: "140.000đ", icon: serviceIcons[2] },
+  { id: "kid", price: "80.000đ", icon: serviceIcons[3] },
+];
+
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
   const { locale } = await params;
-  const tBanner = await getTranslations("Banner");
-  const tAbout = await getTranslations("About");
-  const tServices = await getTranslations("Services");
-  const tPromo = await getTranslations("Promo");
-  const tWhyChoose = await getTranslations("WhyChoose");
-  const tContact = await getTranslations("Contact");
 
-
-  const defaultServicesList = [
-    {
-      id: "adultHaircut",
-      price: "$39 USD",
-      icon: (
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={1.5}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="w-8 h-8 text-zinc-900 dark:text-amber-500"
-        >
-          {/* Intersecting Scissors and Comb */}
-          <circle cx="6" cy="16" r="2.5" />
-          <circle cx="14" cy="16" r="2.5" />
-          <path d="M8 14.5L16.5 6M12 14.5L7.5 6" />
-          <path d="M19 4v10M16 4v3M13 4v3M10 4v3M7 4v3" />
-        </svg>
-      ),
-    },
-    {
-      id: "kidsHaircut",
-      price: "$19 USD",
-      icon: (
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={1.5}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="w-8 h-8 text-zinc-900 dark:text-amber-500"
-        >
-          {/* Barber Comb */}
-          <path d="M4 6h16v4H4z" />
-          <path d="M6 10v4M9 10v4M12 10v4M15 10v4M18 10v4" />
-        </svg>
-      ),
-    },
-    {
-      id: "beardTrim",
-      price: "$29 USD",
-      icon: (
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={1.5}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="w-8 h-8 text-zinc-900 dark:text-amber-500"
-        >
-          {/* Hair Clipper */}
-          <path d="M9 4h6l-1 4H10zM10 8v10a2 2 0 002 2h0a2 2 0 002-2V8" />
-          <path d="M9.5 4v-2M11 4v-2M12.5 4v-2M14 4v-2" />
-        </svg>
-      ),
-    },
-    {
-      id: "neckShave",
-      price: "$39 USD",
-      icon: (
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={1.5}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="w-8 h-8 text-zinc-900 dark:text-amber-500"
-        >
-          {/* Straight Razor */}
-          <path d="M6 18c0-3.3 2.7-6 6-6h8" />
-          <path d="M12 12L7 4h10l3 8" />
-        </svg>
-      ),
-    },
-    {
-      id: "scalpMoisturizing",
-      price: "$10 USD",
-      icon: (
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={1.5}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="w-8 h-8 text-zinc-900 dark:text-amber-500"
-        >
-          {/* Lotion Bottle */}
-          <path d="M8 8h8v11a2 2 0 01-2 2H10a2 2 0 01-2-2V8zM10 8V5a1 1 0 011-1h2a1 1 0 011 1v3" />
-          <circle cx="12" cy="14" r="2" />
-        </svg>
-      ),
-    },
-    {
-      id: "beardGrooming",
-      price: "$49 USD",
-      icon: (
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={1.5}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="w-8 h-8 text-zinc-900 dark:text-amber-500"
-        >
-          {/* Mustache and Beard outline */}
-          <path d="M5 8c0 4.4 3.6 8 8 8s8-3.6 8-8c0-2-1-4-3-4-2 0-3 2-5 2s-3-2-5-2c-2 0-3 2-3 4z" />
-          <path d="M8 9c2-1 3 1 4 1s2-2 4-1c0 0-1 2-2 2s-2-2-4-1z" />
-        </svg>
-      ),
-    },
-  ];
+  // Parallel Data & Translation Fetching (Eliminates Async Waterfall)
+  const [
+    tBanner,
+    tAbout,
+    tServices,
+    tStyles,
+    tProducts,
+    tTeam,
+    tPromo,
+    tWhyChoose,
+    tContact,
+    siteSettingTitle,
+    siteSettingSubTitle,
+    siteSettingFloatingInfoBlock,
+    homeAboutServiceTitle,
+    homeAboutServiceDescription,
+    homeAboutServiceStats,
+    homeServiceTitle,
+    homeServiceDescription,
+    homeServiceList,
+    homePromoTitle,
+    homeReviewfeats,
+    homeContactInfo,
+    homeGoogleMap,
+  ] = await Promise.all([
+    getTranslations("Banner"),
+    getTranslations("HomeAboutService"),
+    getTranslations("HomeServices"),
+    getTranslations("TrendingStyles"),
+    getTranslations("Products"),
+    getTranslations("BarberTeam"),
+    getTranslations("HomePromo"),
+    getTranslations("WhyChoose"),
+    getTranslations("HomeContactInfo"),
+    getSiteSettingApi(locale, SiteSettingKeyEnum.HERO_TITLE),
+    getSiteSettingApi(locale, SiteSettingKeyEnum.HERO_SUBTITLE),
+    getSiteSettingApi(locale, SiteSettingKeyEnum.FLOATING_INFO_BLOCK),
+    getSiteSettingApi(locale, SiteSettingKeyEnum.HOME_ABOUT_SERVICE_TITLE),
+    getSiteSettingApi(locale, SiteSettingKeyEnum.HOME_ABOUT_SERVICE_DESCRIPTION),
+    getSiteSettingApi(locale, SiteSettingKeyEnum.HOME_ABOUT_SERVICE_STATS),
+    getSiteSettingApi(locale, SiteSettingKeyEnum.HOME_SERVICE_TITLE),
+    getSiteSettingApi(locale, SiteSettingKeyEnum.HOME_SERVICE_DESCRIPTION),
+    getSiteSettingApi(locale, SiteSettingKeyEnum.HOME_SERVICE_LIST),
+    getSiteSettingApi(locale, SiteSettingKeyEnum.HOME_PROMO_TITLE),
+    getSiteSettingApi(locale, SiteSettingKeyEnum.HOME_REVIEW_FEATS),
+    getSiteSettingApi(locale, SiteSettingKeyEnum.HOME_APPOINTMENT_INFO),
+    getSiteSettingApi(locale, SiteSettingKeyEnum.HOME_GOOGLE_MAP),
+  ]);
 
   const servicesList = await getServiceApi(locale, defaultServicesList, tServices);
-
-  // Hero_banner
-  const siteSettingTitle = await getSiteSettingApi(locale, SiteSettingKeyEnum.HERO_TITLE);
-  const siteSettingSubTitle = await getSiteSettingApi(locale, SiteSettingKeyEnum.HERO_SUBTITLE);
-
-  //floating info block
-  const siteSettingFloatingInfoBlock = await getSiteSettingApi(locale, SiteSettingKeyEnum.FLOATING_INFO_BLOCK);
-
-  // About service
-  const homeAboutServiceTitle = await getSiteSettingApi(locale, SiteSettingKeyEnum.HOME_ABOUT_SERVICE_TITLE);
-  const homeAboutServiceDescription = await getSiteSettingApi(locale, SiteSettingKeyEnum.HOME_ABOUT_SERVICE_DESCRIPTION);
-  const homeAboutServiceStats = await getSiteSettingApi(locale, SiteSettingKeyEnum.HOME_ABOUT_SERVICE_STATS);
-
-  // Services
-  const homeServiceTitle = await getSiteSettingApi(locale, SiteSettingKeyEnum.HOME_SERVICE_TITLE);
-  const homeServiceDescription = await getSiteSettingApi(locale, SiteSettingKeyEnum.HOME_SERVICE_DESCRIPTION);
-  const homeServiceList = await getSiteSettingApi(locale, SiteSettingKeyEnum.HOME_SERVICE_LIST);
-
-  // Promotion banner
-  const homePromoTitle = await getSiteSettingApi(locale, SiteSettingKeyEnum.HOME_PROMO_TITLE);
-
-  // Reviews
-  const homeReviewfeats = await getSiteSettingApi(locale, SiteSettingKeyEnum.HOME_REVIEW_FEATS);
-
-  // Appointment Info
-  const homeContactInfo = await getSiteSettingApi(locale, SiteSettingKeyEnum.HOME_APPOINTMENT_INFO);
-
-  // Google map
-  const homeGoogleMap = await getSiteSettingApi(locale, SiteSettingKeyEnum.HOME_GOOGLE_MAP);
-  
 
   return (
     <>
@@ -184,9 +106,11 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       />
 
       {/* Floating Shop Info Block */}
-      <FloatingInfoBlock tBanner={tBanner} setting={siteSettingFloatingInfoBlock} />
+      <ScrollReveal direction="up" delay={0.1}>
+        <FloatingInfoBlock tBanner={tBanner} setting={siteSettingFloatingInfoBlock} />
+      </ScrollReveal>
 
-      {/* About Service Section (Asymmetric Editorial Split layout) */}
+      {/* About Service Section */}
       <AboutService
         tAbout={tAbout}
         titleSetting={homeAboutServiceTitle}
@@ -194,7 +118,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         statsSetting={homeAboutServiceStats}
       />
 
-      {/* Browse Services Section (Editorial Grid inside white card) */}
+      {/* Browse Services Section */}
       <BrowserService
         tServices={tServices}
         servicesList={servicesList}
@@ -203,17 +127,33 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         listSetting={homeServiceList}
       />
 
+      {/* Trending Hairstyles Section */}
+      <TrendingStylesSection tStyles={tStyles} />
+
+      {/* Grooming Products Showcase Section */}
+      <ProductsSection tProducts={tProducts} />
+
+      {/* Barber Team Section */}
+      <BarberTeamSection tTeam={tTeam} />
+
       {/* Promo/CTA Banner Section */}
-      <PromotionBanner tPromo={tPromo} title={typeof homePromoTitle?.value === "string" ? homePromoTitle.value : tPromo("title")} />
+      <ScrollReveal direction="up" delay={0.1}>
+        <PromotionBanner tPromo={tPromo} title={typeof homePromoTitle?.value === "string" ? homePromoTitle.value : tPromo("title")} />
+      </ScrollReveal>
 
       {/* Why Choose Us & Reviews Section */}
-      <ReviewsSection tWhyChoose={tWhyChoose} featsSetting={homeReviewfeats} />
+      <ScrollReveal direction="up" delay={0.1}>
+        <ReviewsSection tWhyChoose={tWhyChoose} featsSetting={homeReviewfeats} />
+      </ScrollReveal>
 
       {/* Appointment Contact Form Section */}
       <Contact tContact={tContact} setting={homeContactInfo} />
 
       {/* Interactive Google Map Section */}
-      <GoogleMap setting={homeGoogleMap} />
+      <ScrollReveal direction="up" delay={0.1}>
+        <GoogleMap setting={homeGoogleMap} />
+      </ScrollReveal>
     </>
   );
 }
+
